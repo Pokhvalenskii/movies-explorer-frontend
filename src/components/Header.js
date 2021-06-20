@@ -6,7 +6,7 @@ function Header (props) {
       <img className='header__logo' src={logo} alt='Логотип'/>
       <div className='header__wrapper'>
         <a className='header__btn-singup' href='http://localhost:3000/'>Регистрация</a>
-        <button className='header__btn-login'>Войти</button>        
+        <button className='header__btn-login'>Войти</button>
       </div>
     </header>
   );

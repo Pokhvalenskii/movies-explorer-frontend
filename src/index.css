@@ -17,3 +17,10 @@ code {
 @import url(./blocks/header/__wrapper/header__wrapper.css);
 @import url(./blocks/header/__btn-singup/header__btn-singup.css);
 @import url(./blocks/header/__btn-login/header__btn-login.css);
+
+@import url(./blocks/main/main.css);
+@import url(./blocks/main/__body/main__body.css);
+@import url(./blocks/main/__title/main__title.css);
+@import url(./blocks/main/__logo/main__logo.css);
+@import url(./blocks/main/__footer/main__footer.css);
+@import url(./blocks/main/__footer-link/main__footer-link.css);

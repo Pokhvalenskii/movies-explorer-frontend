@@ -1,0 +1,8 @@
+.main__footer-link {
+  color: white;
+  margin-right: 40px;
+}
+
+.main__footer-link:last-of-type {
+  margin-right: 0;
+}

@@ -1,0 +1,9 @@
+.project__front-end-title {
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 36px;
+}

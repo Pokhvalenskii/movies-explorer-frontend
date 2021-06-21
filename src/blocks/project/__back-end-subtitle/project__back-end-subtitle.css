@@ -1,0 +1,9 @@
+.project__back-end-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 36px;
+  color: #A0A0A0;
+}

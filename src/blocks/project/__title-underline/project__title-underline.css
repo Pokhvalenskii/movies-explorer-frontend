@@ -1,0 +1,6 @@
+.project__title-underline {
+  display: block;
+  border-bottom: 1px solid;
+  width: 100%;
+  max-width: 1140px;
+}

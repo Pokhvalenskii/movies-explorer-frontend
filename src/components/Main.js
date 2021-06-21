@@ -4,7 +4,7 @@ function Main (props) {
     <section className='main'>
       <div className='main__body'>
         <img className='main__logo' src={logo} alt='Главное лого' />
-        <h1 className='main__title'>Учебный проект студента факультета Веб-разработки.</h1>
+        <h1 className='main__title'>ПРОЕКТ 5</h1> 
       </div>
       <div className='main__footer'>
         <a className='main__footer-link' href='URL'>О проекте</a>

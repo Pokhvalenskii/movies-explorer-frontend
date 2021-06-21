@@ -24,3 +24,23 @@ code {
 @import url(./blocks/main/__logo/main__logo.css);
 @import url(./blocks/main/__footer/main__footer.css);
 @import url(./blocks/main/__footer-link/main__footer-link.css);
+
+@import url(./blocks/project/project.css);
+
+@import url(./blocks/project/__back-end-subtitle/project__back-end-subtitle.css);
+@import url(./blocks/project/__back-end-title/project__back-end-title.css);
+@import url(./blocks/project/__back-end-title/_theme/project__back-end-title_theme_back-end.css);
+@import url(./blocks/project/__back-end/project__back-end.css);
+
+@import url(./blocks/project/__front-end/project__front-end.css);
+@import url(./blocks/project/__front-end-title/project__front-end-title.css);
+@import url(./blocks/project/__front-end-title/_theme/project__front-end-title_theme_front-end.css);
+@import url(./blocks/project/__front-end-subtitle/project__front-end-subtitle.css);
+
+@import url(./blocks/project/__progress-bar/project__progress-bar.css);
+@import url(./blocks/project/__text-item/project__text-item.css);
+@import url(./blocks/project/__text-subtitle/project__text-subtitle.css);
+@import url(./blocks/project/__text-title/project__text-title.css);
+@import url(./blocks/project/__texts/project__texts.css);
+@import url(./blocks/project/__title-underline/project__title-underline.css);
+@import url(./blocks/project/__title/project__title.css);

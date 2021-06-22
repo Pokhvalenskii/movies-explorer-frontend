@@ -1,0 +1,7 @@
+.portfolio__link-item {
+  margin: 0;
+}
+
+.portfolio__link-item:last-of-type {
+  margin-bottom: 0;
+}

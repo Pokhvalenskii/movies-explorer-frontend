@@ -1,0 +1,15 @@
+.portfolio__link {
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #000;
+}
+
+.portfolio__link:not(:last-of-type)::after {
+  display: block;
+  content: "";
+  margin-top: 19px;
+  border-bottom: 1px solid #E5E5E5;
+  width: 100%;
+  max-width: 1140px;
+}

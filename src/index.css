@@ -52,3 +52,19 @@ code {
 @import url(./blocks/technologies/__stack/technologies__stack.css);
 @import url(./blocks/technologies/__stack-name/technologies__stack-name.css);
 @import url(./blocks/technologies/__stack-item/technologies__stack-item.css);
+
+@import url(./blocks/student/student.css);
+@import url(./blocks/student/__title/student__title.css);
+@import url(./blocks/student/__texts/student__texts.css);
+@import url(./blocks/student/__text/student__text.css);
+@import url(./blocks/student/__subtitle/student__subtitle.css);
+@import url(./blocks/student/__photo/student__photo.css);
+@import url(./blocks/student/__media/student__media.css);
+@import url(./blocks/student/__media-item/student__media-item.css);
+@import url(./blocks/student/__info/student__info.css);
+
+@import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/portfolio/__title/portfolio__title.css);
+@import url(./blocks/portfolio/__link/portfolio__link.css);
+@import url(./blocks/portfolio/__link-item/portfolio__link-item.css);
+@import url(./blocks/portfolio/__wrapper-item/portfolio__wrapper-item.css);

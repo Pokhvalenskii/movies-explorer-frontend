@@ -1,0 +1,10 @@
+.student__media-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #000;
+
+}
+
+.student__media-item:last-of-type {
+  margin-right: 0;
+}

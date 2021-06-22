@@ -1,0 +1,7 @@
+.student {
+  display: flex;
+  flex-direction: column;
+  padding: 110px 70px 110px;
+  width: 100%;
+  max-width: 1140px;
+}

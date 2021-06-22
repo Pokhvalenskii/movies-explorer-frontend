@@ -1,0 +1,13 @@
+.technologies__stack-item {
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #E8E8E8;
+  margin-right: 10px;
+}
+
+.technologies__stack-item:last-of-type {
+  margin-right: 0;
+}

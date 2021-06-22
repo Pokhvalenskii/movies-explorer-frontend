@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1280px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -42,5 +43,12 @@ code {
 @import url(./blocks/project/__text-subtitle/project__text-subtitle.css);
 @import url(./blocks/project/__text-title/project__text-title.css);
 @import url(./blocks/project/__texts/project__texts.css);
-@import url(./blocks/project/__title-underline/project__title-underline.css);
-@import url(./blocks/project/__title/project__title.css);
+
+@import url(./blocks/section-title/section-title.css);
+
+@import url(./blocks/technologies/technologies.css);
+@import url(./blocks/technologies/__title/technologies__title.css);
+@import url(./blocks/technologies/__subtitle/technologies__subtitle.css);
+@import url(./blocks/technologies/__stack/technologies__stack.css);
+@import url(./blocks/technologies/__stack-name/technologies__stack-name.css);
+@import url(./blocks/technologies/__stack-item/technologies__stack-item.css);

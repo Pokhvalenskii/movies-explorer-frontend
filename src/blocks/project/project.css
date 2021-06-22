@@ -1,8 +1,7 @@
 .project {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  margin: auto;
+  padding: 110px 70px 110px;
   width: 100%;
   max-width: 1140px;
 }

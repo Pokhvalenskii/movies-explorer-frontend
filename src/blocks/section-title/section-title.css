@@ -1,0 +1,12 @@
+.section-title {
+  margin: 0;
+}
+
+.section-title::after {
+  display: block;
+  content: "";
+  margin-top: 23px;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  max-width: 1140px;
+}

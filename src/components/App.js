@@ -3,6 +3,7 @@ import Main from './Main'
 import Project from './Project';
 import Technologies from './Technologies'
 import Student from './Student';
+import Footer from './Footer'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Project />
       <Technologies />
       <Student />
+      <Footer />
     </div>
   );
 }

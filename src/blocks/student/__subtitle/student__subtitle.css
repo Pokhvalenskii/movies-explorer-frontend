@@ -1,4 +1,6 @@
 .student__subtitle {
   margin: 18px 0 26px;
   font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
 }

@@ -1,4 +1,5 @@
 .student__info {
+  margin-top: 66px;
   display: flex;
   flex-direction: row;
 }

@@ -6,6 +6,7 @@ import Student from './Student';
 import Footer from './Footer'
 import Register from './Register';
 import Login from './Login'
+import NotFoundPage from './NotFoundPage';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path='/signup'>
           <Register />
+        </Route>
+        <Route path='*'>
+          <NotFoundPage/>
         </Route>
       </Switch>
     </div>

@@ -5,6 +5,7 @@ import Technologies from './Technologies'
 import Student from './Student';
 import Footer from './Footer'
 import Register from './Register';
+import Login from './Login'
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ function App() {
           <Footer />
         </Route>
         <Route path='/signin'>
-
+          <Login />
         </Route>
         <Route path='/signup'>
           <Register />

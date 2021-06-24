@@ -1,0 +1,9 @@
+.login__subtitle {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #a0a0a0;
+}

@@ -96,6 +96,25 @@
 @import url(./blocks/not-found/__title/not-found__title.css);
 @import url(./blocks/not-found/not-found.css);
 
+/* ICON-BLOCK */
+@import url(./blocks/icon-block/icon-block.css);
+@import url(./blocks/icon-block/__img/icon-block__img.css);
+
+/* PROFILE */
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__text/profile__text.css);
+@import url(./blocks/profile/__text/_type/profile__text_type_fat.css);
+@import url(./blocks/profile/__nav/profile__nav.css);
+@import url(./blocks/profile/__header/profile__header.css);
+
+/* PROFILE-FORM */
+@import url(./blocks/profile-form/profile-form.css);
+@import url(./blocks/profile-form/__title/profile-form__title.css);
+@import url(./blocks/profile-form/__input/profile-form__input.css);
+@import url(./blocks/profile-form/__btn/profile-form__btn.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_edit.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
+
 body {
   margin: 0 auto;
   max-width: 1280px;

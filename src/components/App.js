@@ -7,6 +7,7 @@ import Footer from './Footer'
 import Register from './Register';
 import Login from './Login'
 import NotFoundPage from './NotFoundPage';
+import Profile from './Profile';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path='/signup'>
           <Register />
+        </Route>
+        <Route path='/profile'>
+          <Profile />
         </Route>
         <Route path='*'>
           <NotFoundPage/>

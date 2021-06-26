@@ -101,11 +101,11 @@
 @import url(./blocks/icon-block/__img/icon-block__img.css);
 
 /* PROFILE */
-@import url(./blocks/profile/profile.css);
-@import url(./blocks/profile/__text/profile__text.css);
-@import url(./blocks/profile/__text/_type/profile__text_type_fat.css);
-@import url(./blocks/profile/__nav/profile__nav.css);
-@import url(./blocks/profile/__header/profile__header.css);
+
+@import url(./blocks/header-profile/header-profile.css);
+@import url(./blocks/header-profile/__text/header-profile__text.css);
+@import url(./blocks/header-profile/__text/_type/header-profile__text_type_fat.css);
+@import url(./blocks/header-profile/__nav/header-profile__nav.css);
 
 /* PROFILE-FORM */
 @import url(./blocks/profile-form/profile-form.css);
@@ -116,7 +116,21 @@
 @import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
 @import url(./blocks/profile-form/__input-wrapper/profile-form__input-wrapper.css);
 @import url(./blocks/profile-form/__input-label/profile-form__input-label.css);
-@import url(./blocks/profile/__wrapper/profile__wrapper.css);
+
+/* SEARCH */
+@import url(./blocks/search-form/search-form.css);
+@import url(./blocks/search-form/__wrapper/search-form__wrapper.css);
+@import url(./blocks/search-form/__input/search-form__input.css);
+@import url(./blocks/search-form/__btn/search-form__btn.css);
+@import url(./blocks/search-form/__checkbox/search-form__checkbox.css);
+@import url(./blocks/search-form/__checkbox-text/search-form__checkbox-text.css);
+
+/* CHECKBOX */
+@import url(./blocks/checkbox/checkbox.css);
+@import url(./blocks/checkbox/__input/checkbox__input.css);
+@import url(./blocks/checkbox/__state/checkbox__state.css);
+
+
 
 body {
   margin: 0 auto;

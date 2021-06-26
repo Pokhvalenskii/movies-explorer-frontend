@@ -1,0 +1,13 @@
+.search-form__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-image: url('../../../images/icon-search.svg');
+  background-color: #3456F3;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  position: relative;
+  right: 45px;
+}

@@ -1,0 +1,7 @@
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked + .checkbox__state::before {
+  transform: translateX(-16px);
+}

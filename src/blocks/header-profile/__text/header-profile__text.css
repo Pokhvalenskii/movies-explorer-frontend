@@ -1,10 +1,10 @@
-.profile__text {
+.header-profile__text {
   margin-right: 20px;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
 }
-.profile__text:last-of-type {
+.header-profile__text:last-of-type {
   margin-right: 13px;
   margin-left: 30px;
 }

@@ -1,0 +1,12 @@
+.profile-form__btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.profile-form__btn:first-of-type {
+  margin: 220px 0 16px;
+}

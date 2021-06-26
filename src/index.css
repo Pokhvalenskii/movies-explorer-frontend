@@ -114,6 +114,9 @@
 @import url(./blocks/profile-form/__btn/profile-form__btn.css);
 @import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_edit.css);
 @import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
+@import url(./blocks/profile-form/__input-wrapper/profile-form__input-wrapper.css);
+@import url(./blocks/profile-form/__input-label/profile-form__input-label.css);
+@import url(./blocks/profile/__wrapper/profile__wrapper.css);
 
 body {
   margin: 0 auto;

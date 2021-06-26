@@ -1,0 +1,6 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  padding: 74px 0 70px;
+  align-items: center;
+}

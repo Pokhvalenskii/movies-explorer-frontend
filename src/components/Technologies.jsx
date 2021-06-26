@@ -1,7 +1,7 @@
 function Technologies (props) {
   return(
     <section className='technologies'>
-      <h2 className='section-title'>Технологии</h2>
+      <h2 className='section-title' id='about-techs'>Технологии</h2>
       <h3 className='technologies__title'>7 технологий</h3>
       <p className='technologies__subtitle'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
       <ul className='technologies__stack'>

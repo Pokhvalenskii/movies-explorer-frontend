@@ -1,9 +1,13 @@
 .header__btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
   width: 76px;
   height: 32px;
   margin-right: 70px;
   border-radius: 3px;
-  border:none;
   background-color: #2BE080;
   color: #000;
   font-size: 12px;

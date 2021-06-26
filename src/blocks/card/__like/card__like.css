@@ -1,0 +1,10 @@
+.card__like {
+  width: 24px;
+  height: 24px;
+  background-color: #f5f5f5;
+  background-image: url('../../../images/icon__heart-red.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 50%;
+}

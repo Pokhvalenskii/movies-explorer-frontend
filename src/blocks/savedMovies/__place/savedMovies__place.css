@@ -1,0 +1,6 @@
+.savedMovies__place {
+  display: grid;
+  margin-top: 70px;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}

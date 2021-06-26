@@ -3,7 +3,7 @@ import linkLogo from '../images/logo-arrow.svg'
 function Student (props) {
   return (
     <section className='student'>
-      <h2 className='section-title'>Студент</h2>
+      <h2 className='section-title' id='about-student'>Студент</h2>
       <div className='student__info'>
         <div className='student__texts'>
           <h3 className='student__title'>Никита Похваленский</h3>

@@ -1,7 +1,7 @@
 function Project (props) {
   return (
     <section className='project'>
-      <h2 className='section-title'>О проекте</h2>
+      <h2 className='section-title' id='about-project'>О проекте</h2>
       <div className='project__texts'>
         <div className='project__text-item'>
           <h3 className='project__text-title'>Дипломный проект включал 5 этапов</h3>

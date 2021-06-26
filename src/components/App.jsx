@@ -9,8 +9,12 @@ import Login from './Login'
 import NotFoundPage from './NotFoundPage';
 import Profile from './Profile';
 import Movies from './Movies'
+import SavedMovies from './SavedMovies'
 
 import { Switch, Route } from 'react-router-dom';
+const cards = {
+
+}
 
 function App() {
   return (
@@ -34,7 +38,10 @@ function App() {
           <Profile />
         </Route>
         <Route path='/movies'>
-          <Movies />
+          <Movies cards={cards}/>
+        </Route>
+        <Route path='/saved-movies'>
+         <SavedMovies />
         </Route>
         <Route path='*'>
           <NotFoundPage/>

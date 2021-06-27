@@ -19,3 +19,9 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 460px) {
+  .menu__block {
+    padding: 28px 10px 0;
+  }
+}

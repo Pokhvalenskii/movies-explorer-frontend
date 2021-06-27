@@ -16,7 +16,7 @@ import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
-  
+
   const [burgerActive, setBurgerActive] = useState(false);
 
   function handleActiveBurger (status) {
@@ -45,13 +45,13 @@ function App() {
           <Register />
         </Route>
         <Route path='/profile'>
-          <Profile />
+          <Profile isActive={handleActiveBurger} burgerActive={burgerActive}/>
         </Route>
         <Route path='/movies'>
           <Movies isActive={handleActiveBurger} burgerActive={burgerActive}/>
         </Route>
         <Route path='/saved-movies'>
-         <SavedMovies />
+         <SavedMovies isActive={handleActiveBurger} burgerActive={burgerActive}/>
         </Route>
         <Route path='*'>
           <NotFoundPage/>

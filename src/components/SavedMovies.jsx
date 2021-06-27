@@ -4,10 +4,10 @@ import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 function SavedMovies (props) {
   return(
-    <section className='savedMovies'>
-      <HeaderProfile />
+    <section className='movies'>
+      <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
       <SearchForm />
-      <div className='savedMovies__place'>
+      <div className='movies__place'>
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />

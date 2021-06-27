@@ -13,20 +13,19 @@ function HeaderProfile (props) {
     <div className='header-profile'>
       <a href='/'>
         <img className='logo' src={logo} alt='Логотип'/>
-      </a>      
+      </a>
       <nav className='header-profile__nav'>
         <a href='/movies' className='header-profile__text header-profile__text_type_fat'>Фильмы</a>
         <a href='/saved-movies' className='header-profile__text'>Сохранённые фильмы</a>
         <a href='/profile' className='header-profile__text header-profile__text_type_fat'>Аккаунт</a>
         <div className='icon-block'>
           <img className='icon-block__img' src={icon} alt='иконка профиля'/>
-        </div>        
+        </div>
       </nav>
       <div className={`menu__block ${isActive}`} onClick={props.isActive}>
         <span className='menu__line'></span>
       </div>
       {isActive && <Menu />}
-      {/* <Menu isActive={props.isActive} burgerActive={props.burgerActive}/> */}
     </div>
   );
 }

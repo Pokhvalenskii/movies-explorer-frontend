@@ -1,6 +1,6 @@
 .search-form__input {
   display: flex;
-  /* width: 932px; */
+  padding-left: 20px;
   max-width: 932px;
   width: 100%;
   height: 48px;

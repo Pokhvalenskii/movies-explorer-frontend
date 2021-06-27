@@ -4,3 +4,15 @@
   padding: 74px 0 70px;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .profile-form {
+    padding: 236px 0 70px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .profile-form {
+    padding: 70px 20px 40px;
+  }
+}

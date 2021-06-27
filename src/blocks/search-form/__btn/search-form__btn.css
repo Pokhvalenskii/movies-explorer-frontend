@@ -14,7 +14,13 @@
 
 @media screen and (max-width: 768px){
   .search-form__btn {
-    right: 40px;
+    right: 20px;
     position: absolute;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .search-form__btn {
+    right: 20px;
   }
 }

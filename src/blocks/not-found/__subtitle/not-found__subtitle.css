@@ -4,3 +4,10 @@
   line-height: 19px;
   margin: 0;
 }
+
+@media screen and (max-width: 460px) {
+  .not-found__subtitle {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

@@ -7,3 +7,10 @@
   font-weight: 400;
   color: #a0a0a0;
 }
+
+@media screen and (max-width: 460px) {
+  .register__subtitle {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

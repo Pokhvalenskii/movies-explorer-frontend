@@ -7,3 +7,9 @@
   list-style-type: none;
   background-color: #fff;
 }
+
+@media screen and (max-width: 460px) {
+  .menu__list {
+    width: 100%;
+  }
+}

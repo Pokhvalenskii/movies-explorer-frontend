@@ -4,7 +4,7 @@ function Login (props) {
   return(
     <section className='login'>
       <div className='login__wrapper'>
-        <a href='/'>
+        <a href='/' className='login__wrapper-logo'>
           <img className='logo' src={logo} alt='Логотип'/>
         </a>
         <h2 className='login__title'>Рады видеть!</h2>

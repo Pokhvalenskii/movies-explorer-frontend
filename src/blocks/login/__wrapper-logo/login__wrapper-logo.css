@@ -1,0 +1,6 @@
+@media screen and (max-width: 460px) {
+  .login__wrapper-logo {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -2,3 +2,9 @@
   display: flex;
   width: 30%;
 }
+
+@media screen and (max-width: 460px) {
+  .menu__overlay {
+    display: none;
+  }
+}

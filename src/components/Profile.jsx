@@ -5,10 +5,12 @@ function Profile (props) {
   return(
     <section className='profile'>
       <div className='header-profile'>
-        <img className='logo' src={logo} alt='Логотип'/>
+        <a href='/'>
+          <img className='logo' src={logo} alt='Логотип'/>
+        </a>
         <nav className='header-profile__nav'>
-          <p className='header-profile__text header-profile__text_type_fat'>Фильмы</p>
-          <p className='header-profile__text'>Сохранённые фильмы</p>
+          <a href='/movies' className='header-profile__text header-profile__text_type_fat'>Фильмы</a>
+          <a href='/saved-movies' className='header-profile__text'>Сохранённые фильмы</a>
           <p className='header-profile__text header-profile__text_type_fat'>Аккаунт</p>
           <div className='icon-block'>
             <img className='icon-block__img' src={icon} alt='иконка профиля'/>

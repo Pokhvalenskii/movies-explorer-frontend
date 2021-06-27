@@ -145,6 +145,17 @@
 @import url(./blocks/savedMovies/savedMovies.css);
 @import url(./blocks/savedMovies/__place/savedMovies__place.css);
 
+@import url(./blocks/profile/profile.css);
+
+@import url(./blocks/menu/menu.css);
+@import url(./blocks/menu/__line/menu__line.css);
+@import url(./blocks/menu/__block/menu__block.css);
+@import url(./blocks/menu/__link/menu__link.css);
+@import url(./blocks/menu/__list-item/menu__list-item.css);
+@import url(./blocks/menu/__list/menu__list.css);
+@import url(./blocks/menu/__overlay/menu__overlay.css);
+@import url(./blocks/menu/__wrapper/menu__wrapper.css);
+
 body {
   margin: 0 auto;
   max-width: 1280px;

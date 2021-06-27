@@ -2,7 +2,8 @@
   margin-right: 20px;
   text-decoration: none;
   color: #000;
-
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .student__media-item:last-of-type {

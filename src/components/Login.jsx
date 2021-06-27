@@ -4,7 +4,9 @@ function Login (props) {
   return(
     <section className='login'>
       <div className='login__wrapper'>
-        <img className='logo' src={logo} alt='Логотип'/>
+        <a href='/'>
+          <img className='logo' src={logo} alt='Логотип'/>
+        </a>
         <h2 className='login__title'>Рады видеть!</h2>
         <form className='form'>
           <p className='form__label'>E-mail</p>

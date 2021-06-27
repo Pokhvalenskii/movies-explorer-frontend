@@ -11,12 +11,22 @@ import Profile from './Profile';
 import Movies from './Movies'
 import SavedMovies from './SavedMovies'
 
-import { Switch, Route } from 'react-router-dom';
-const cards = {
+import { useState } from 'react';
 
-}
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
+  
+  const [burgerActive, setBurgerActive] = useState(false);
+
+  function handleActiveBurger (status) {
+    if(burgerActive) {
+      setBurgerActive(false);
+    } else {
+      setBurgerActive(true);
+    }
+  }
+
   return (
     <div className="App">
       <Switch>
@@ -38,7 +48,7 @@ function App() {
           <Profile />
         </Route>
         <Route path='/movies'>
-          <Movies cards={cards}/>
+          <Movies isActive={handleActiveBurger} burgerActive={burgerActive}/>
         </Route>
         <Route path='/saved-movies'>
          <SavedMovies />

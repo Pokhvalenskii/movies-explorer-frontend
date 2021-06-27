@@ -1,3 +1,9 @@
 .student__media {
-  margin: 99px 0 0;
+  margin: 99px 0 0;  
+}
+
+@media screen and (max-width: 769px){ 
+  .student__media {
+    margin: 87px 0 0; 
+  }
 }

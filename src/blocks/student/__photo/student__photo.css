@@ -2,4 +2,12 @@
   width: 270px;
   height: 327px;
   border-radius: 10px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 769px){ 
+  .student__photo {
+    width: 255px;
+    height: 307px;
+  }
 }

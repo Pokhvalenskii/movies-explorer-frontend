@@ -1,0 +1,9 @@
+.menu__list {
+  padding-top: 159px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  background-color: #fff;
+}

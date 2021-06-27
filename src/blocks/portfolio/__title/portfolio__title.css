@@ -5,3 +5,9 @@
   line-height: 20px;
   color: #A0A0A0;
 }
+
+@media screen and (max-width: 769px){ 
+  .portfolio__title {
+    margin: 91px 0 50px;
+  }
+}

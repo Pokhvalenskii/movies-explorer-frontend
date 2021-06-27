@@ -4,3 +4,9 @@
   flex-direction: column;
   padding: 90px 70px 100px;
 }
+
+@media screen and (max-width: 769px){ 
+  .technologies {
+    padding: 90px 50px 90px;
+  }
+}

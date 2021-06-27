@@ -3,6 +3,8 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+  text-decoration: none;
+  color: #000;
 }
 .header-profile__text:last-of-type {
   margin-right: 13px;

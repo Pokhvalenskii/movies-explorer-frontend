@@ -11,3 +11,10 @@
 .technologies__stack-item:last-of-type {
   margin-right: 0;
 }
+
+@media screen and (max-width: 769px){ 
+  .technologies__stack-item {
+    width: 84px;
+    height: 57px;
+  }
+}

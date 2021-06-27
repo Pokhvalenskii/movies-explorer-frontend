@@ -4,7 +4,9 @@ function Register (props) {
   return(
     <section className='register'>
       <div className='register__wrapper'>
-        <img className='logo' src={logo} alt='Логотип'/>
+        <a href='/'>
+          <img className='logo' src={logo} alt='Логотип'/>
+        </a>
         <h2 className='register__title'>Добро пожаловать!</h2>
         <form className='form'>
           <p className='form__label'>Имя</p>

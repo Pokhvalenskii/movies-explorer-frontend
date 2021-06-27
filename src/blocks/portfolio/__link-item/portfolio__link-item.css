@@ -8,3 +8,9 @@
 .portfolio__link-item:last-of-type {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 769px){ 
+  .portfolio__link-item {
+    font-size: 28px;
+  }
+}

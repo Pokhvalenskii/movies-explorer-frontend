@@ -4,3 +4,11 @@
   font-weight: 500;
   line-height: 20px;
 }
+
+@media screen and (max-width: 769px){ 
+  .student__subtitle {
+    margin: 16px 0 20px;
+    font-size: 12px;
+    line-height: 18px;    
+  }
+}

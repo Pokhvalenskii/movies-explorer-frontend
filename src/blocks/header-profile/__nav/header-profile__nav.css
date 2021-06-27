@@ -3,3 +3,9 @@
   flex-direction: row;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .header-profile__nav {
+    display: none;
+  }
+}

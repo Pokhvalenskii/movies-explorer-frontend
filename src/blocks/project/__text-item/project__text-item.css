@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 769px){ 
+  .project__text-item {
+    /* margin-right: 30px; */
+    max-width: 319px;
+  }
+
+  .project__text-item:last-of-type {
+    /* margin-right: 0; */
+  }
+
+}

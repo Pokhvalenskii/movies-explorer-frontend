@@ -6,9 +6,9 @@ import HeaderProfile from './HeaderProfile';
 function Movies (props) {
   return(
     <section className='movies'>
-      <HeaderProfile/>
+      <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
       <SearchForm />
-      <div className='movies__place'>
+      {/* <div className='movies__place'>
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
@@ -25,9 +25,9 @@ function Movies (props) {
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
-      </div>
-      <button className='movies__btn'>Ещё</button>
-      <Footer />
+      </div> */}
+      {/* <button className='movies__btn'>Ещё</button> */}
+      {/* <Footer /> */}
     </section>
   );
 }

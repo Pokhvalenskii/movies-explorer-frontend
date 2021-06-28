@@ -1,5 +1,5 @@
 .project__back-end-title {
-  background-color: #2BE080;
+  background-color: #3DDC84;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,5 +8,5 @@
   height: 36px;
   font-size: 14px;
   font-weight: 400;
-  line-height: 17px;  
+  line-height: 17px;
 }

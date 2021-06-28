@@ -33,12 +33,12 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/'>
-          {/* <Header /> */}
+          <Header />
           <Promo />
-          {/* <Project />
+          <Project />
           <Technologies />
           <Student />
-          <Footer /> */}
+          <Footer />
         </Route>
         <Route path='/signin'>
           <Login />

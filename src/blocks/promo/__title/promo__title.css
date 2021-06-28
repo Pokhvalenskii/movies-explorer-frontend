@@ -6,3 +6,24 @@
   color: #fff;
   margin-bottom: 36px;
 }
+
+@media screen and (max-width: 768px) {
+  .promo__title {
+    margin-top: 48px;
+    margin-bottom: 22px;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .promo__title {
+    margin-top: 44px;
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
+}

@@ -1,5 +1,4 @@
 import Header from './Header'
-import Main from './Main'
 import Promo from './Promo';
 import Project from './Project';
 import Technologies from './Technologies'
@@ -34,13 +33,12 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/'>
-          <Header />
-          {/* <Main /> */}
+          {/* <Header /> */}
           <Promo />
-          <Project />
+          {/* <Project />
           <Technologies />
           <Student />
-          <Footer />
+          <Footer /> */}
         </Route>
         <Route path='/signin'>
           <Login />

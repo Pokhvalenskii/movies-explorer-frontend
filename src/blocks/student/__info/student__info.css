@@ -2,10 +2,12 @@
   margin-top: 66px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 460px){
   .student__info {
     flex-direction: column-reverse;
+    margin-top: 0;
   }
 }

@@ -7,3 +7,12 @@
   font-weight: 400;
   line-height: 58px;
 }
+
+@media screen and (max-width: 460px){
+  .technologies__title {
+    margin: 60px auto 24px;
+    font-size: 30px;
+    line-height: 36.31px;
+    letter-spacing: 0.04em;
+  }
+}

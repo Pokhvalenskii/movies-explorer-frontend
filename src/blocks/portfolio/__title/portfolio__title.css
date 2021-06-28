@@ -6,8 +6,14 @@
   color: #A0A0A0;
 }
 
-@media screen and (max-width: 769px){ 
+@media screen and (max-width: 768px){
   .portfolio__title {
     margin: 91px 0 50px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .portfolio__title {
+    margin: 69px 0 40px;
   }
 }

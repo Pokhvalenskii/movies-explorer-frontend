@@ -36,9 +36,9 @@ function App() {
           <Header />
           <Main />
           <Project />
-          {/* <Technologies /> */}
-          {/* <Student /> */}
-          {/* <Footer /> */}
+          <Technologies />
+          <Student />
+          <Footer />
         </Route>
         <Route path='/signin'>
           <Login />

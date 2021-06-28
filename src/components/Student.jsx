@@ -6,7 +6,7 @@ function Student (props) {
       <h2 className='section-title' id='about-student'>Студент</h2>
       <div className='student__info'>
         <div className='student__texts'>
-          <h3 className='student__title'>Никита Похваленский</h3>
+          <h3 className='student__title'>Никита</h3>
           <p className='student__subtitle'>Фронтенд-разработчик, 25лет</p>
           <p className='student__text'>Во время учебы пробовал много сфер деятельности, но остановился на веб-разработке. Хочу
 дальше совершенствовать свои навыки именно в этой области, и стать кунг-фу мастером в ней. Не

@@ -56,6 +56,7 @@
 @import url(./blocks/portfolio/__link/portfolio__link.css);
 @import url(./blocks/portfolio/__link-item/portfolio__link-item.css);
 @import url(./blocks/portfolio/__wrapper-item/portfolio__wrapper-item.css);
+@import url(./blocks/portfolio/__link-logo/portfolio__link-logo.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__text/footer__text.css);

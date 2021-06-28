@@ -5,9 +5,19 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 769px){ 
+@media screen and (max-width: 769px){
   .student__photo {
     width: 255px;
     height: 307px;
+    /* padding: 60px 0 40px; */
+    margin: 60px 0 40px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .student__photo {
+    width: 292px;
+    height: 352px;
+    width: 100%;
   }
 }

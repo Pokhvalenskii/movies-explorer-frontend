@@ -6,3 +6,12 @@
   max-width: 460px;
   line-height: 20px;
 }
+
+@media screen and (max-width: 460px){
+  .technologies__subtitle {
+    margin: 0;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: -0.04em;
+  }
+}

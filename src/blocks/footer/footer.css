@@ -2,8 +2,8 @@
   display: flex;
   font-size: 13px;
   flex-direction: column;
-  padding: 79px 0 20px;
-  margin: auto;
+  padding: 79px 70px 20px;
+  /* margin: auto; */
   max-width: 1140px;
 }
 

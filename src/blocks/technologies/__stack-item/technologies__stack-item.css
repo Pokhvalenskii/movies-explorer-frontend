@@ -1,11 +1,10 @@
 .technologies__stack-item {
   display: flex;
   justify-content: center;
-  width: 90px;
-  height: 60px;
+  width: 84px;
+  height: 54px;
   border-radius: 10px;
   background-color: #E8E8E8;
-  margin-right: 10px;
 }
 
 .technologies__stack-item:last-of-type {

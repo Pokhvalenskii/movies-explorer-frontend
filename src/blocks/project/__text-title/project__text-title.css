@@ -4,3 +4,17 @@
   font-weight: 400;
   line-height: 24.2px;
 }
+
+/* @media screen and (max-width: 768px){
+  .project__text-title {
+    padding: 90px 50px 90px;
+  }
+} */
+
+/* @media screen and (max-width: 460px){
+  .project__text-title {
+    font-size: 18px;
+    line-height: 21.78px;
+    letter-spacing: 0.04em;
+  }
+} */

@@ -1,8 +1,9 @@
 .section-title {
   margin: 0;
-  font-size: 22px;
   font-weight: 400;
-  line-height: 26,63px;
+  font-size: 22px;
+  line-height: 26.63px;
+  letter-spacing: -0.04em;
 }
 
 .section-title::after {
@@ -12,4 +13,12 @@
   border-bottom: 1px solid #000;
   width: 100%;
   max-width: 1140px;
+}
+
+@media screen and (max-width: 460px){
+  .section-title {
+    font-size: 18px;
+    line-height: 21.78px;
+    letter-spacing: -0.04em;
+  }
 }

@@ -35,7 +35,7 @@ function App() {
         <Route exact path='/'>
           <Header />
           <Main />
-          {/* <Project /> */}
+          <Project />
           {/* <Technologies /> */}
           {/* <Student /> */}
           {/* <Footer /> */}

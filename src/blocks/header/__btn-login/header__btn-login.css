@@ -13,3 +13,8 @@
   font-weight: 500;
   line-height: 16px;
 }
+
+.header__btn-login:hover {
+  opacity: .7;
+  transition: .2s ease;
+}

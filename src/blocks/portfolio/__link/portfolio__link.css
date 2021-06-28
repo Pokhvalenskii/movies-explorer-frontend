@@ -5,6 +5,11 @@
   color: #000;
 }
 
+.portfolio__link:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
 .portfolio__link:not(:last-of-type)::after {
   display: block;
   content: "";

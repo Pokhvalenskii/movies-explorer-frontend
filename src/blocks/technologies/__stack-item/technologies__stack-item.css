@@ -11,6 +11,11 @@
   margin-right: 0;
 }
 
+.technologies__stack-item:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
 @media screen and (max-width: 768px){
   .technologies__stack-item {
     min-width: 84px;

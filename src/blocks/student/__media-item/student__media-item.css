@@ -6,6 +6,11 @@
   font-size: 14px;
 }
 
+.student__media-item:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
 .student__media-item:last-of-type {
   margin-right: 0;
 }

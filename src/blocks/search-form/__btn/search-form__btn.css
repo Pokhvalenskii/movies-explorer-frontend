@@ -12,6 +12,11 @@
   right: 45px;
 }
 
+.search-form__btn:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
 @media screen and (max-width: 768px){
   .search-form__btn {
     right: 20px;

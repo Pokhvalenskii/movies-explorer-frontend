@@ -6,6 +6,11 @@
   line-height: 16px;
 }
 
+.main__footer-link:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
 .main__footer-link:last-of-type {
   margin-right: 0;
 }

@@ -1,4 +1,10 @@
 .profile-form__input {
   width: 100%;
   border: none;
+  /* outline: solid 1px #aeaeae; */
+  outline-offset: 0;
+}
+
+.profile-form__input:focus {
+  outline: solid 1px #a8a8a8;
 }

@@ -9,3 +9,8 @@
   color: #fff;
   border: none
 }
+
+.form__btn:hover {
+  opacity: .7;
+  transition: .2s ease;
+}

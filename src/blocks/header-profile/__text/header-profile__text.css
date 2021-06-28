@@ -10,3 +10,8 @@
   margin-right: 13px;
   margin-left: 30px;
 }
+
+.header-profile__text:hover {
+  opacity: .7;
+  transition: .2s ease;
+}

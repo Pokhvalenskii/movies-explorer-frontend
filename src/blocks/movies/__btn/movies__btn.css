@@ -8,3 +8,8 @@
   margin: 22px 0 80px;
   padding: 0;
 }
+
+.movies__btn:hover {
+  opacity: .7;
+  transition: .2s ease;
+}

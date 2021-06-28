@@ -164,6 +164,8 @@
 @import url(./blocks/menu-btn/menu-btn.css);
 @import url(./blocks/menu-btn/__line/menu-btn__line.css);
 
+@import url(./blocks/link/link.css);
+
 body {
   margin: 0 auto;
   max-width: 1280px;

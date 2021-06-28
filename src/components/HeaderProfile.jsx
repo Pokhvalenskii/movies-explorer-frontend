@@ -3,11 +3,9 @@ import icon from '../images/icon-user.svg';
 
 import Menu from './Menu';
 
-// const isActiveWrapper = props.burgerActive ? 'menu__wrapper_active' : '';
-
 function HeaderProfile (props) {
 
-  const isActive = props.burgerActive ? 'menu__block_active' : '';
+  const isActive = props.burgerActive ? 'menu-btn_active' : '';
 
   return(
     <div className='header-profile'>
@@ -22,8 +20,8 @@ function HeaderProfile (props) {
           <img className='icon-block__img' src={icon} alt='иконка профиля'/>
         </div>
       </nav>
-      <div className={`menu__block ${isActive}`} onClick={props.isActive}>
-        <span className='menu__line'></span>
+      <div className={`menu-btn ${isActive}`} onClick={props.isActive}>
+        <span className='menu-btn__line'></span>
       </div>
       {isActive && <Menu />}
     </div>

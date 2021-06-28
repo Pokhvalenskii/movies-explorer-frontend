@@ -22,8 +22,10 @@ function App() {
   function handleActiveBurger (status) {
     if(burgerActive) {
       setBurgerActive(false);
+      document.body.style.overflow = 'scroll';
     } else {
       setBurgerActive(true);
+      document.body.style.overflow = 'hidden';
     }
   }
 

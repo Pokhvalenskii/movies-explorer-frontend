@@ -5,8 +5,14 @@
   max-width: 1140px;
 }
 
-@media screen and (max-width: 769px){ 
+@media screen and (max-width: 768px){
   .student {
     padding: 90px 50px 90px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .student {
+    padding: 70px 10px 70px;
   }
 }

@@ -6,3 +6,9 @@
   font-weight: 500;
   line-height: 16px;
 }
+
+@media screen and (max-width: 460px) {
+  .header__btn-singup {
+    margin-right: 14px;
+  }
+}

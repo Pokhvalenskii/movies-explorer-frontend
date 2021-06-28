@@ -12,9 +12,9 @@
   margin-right: 0;
 }
 
-@media screen and (max-width: 769px){ 
+@media screen and (max-width: 768px){
   .technologies__stack-item {
-    width: 84px;
-    height: 57px;
+    min-width: 84px;
+    min-height: 57px;
   }
 }

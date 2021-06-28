@@ -34,11 +34,11 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Header />
-          <Main />
+          {/* <Main />
           <Project />
           <Technologies />
           <Student />
-          <Footer />
+          <Footer /> */}
         </Route>
         <Route path='/signin'>
           <Login />

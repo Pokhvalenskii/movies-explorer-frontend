@@ -21,4 +21,8 @@
     line-height: 21.78px;
     letter-spacing: -0.04em;
   }
+
+  .section-title::after {
+    margin-top: 28px;
+  }
 }

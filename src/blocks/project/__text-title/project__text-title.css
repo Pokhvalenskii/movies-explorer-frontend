@@ -1,20 +1,14 @@
 .project__text-title {
-  margin: 70px auto 0;
+  margin: 70px 0 22px;
   font-size: 20px;
   font-weight: 400;
   line-height: 24.2px;
+  letter-spacing: -0.04em;
 }
 
-/* @media screen and (max-width: 768px){
+@media screen and (max-width: 460px) {
   .project__text-title {
-    padding: 90px 50px 90px;
+    margin: 0 0 16px;
+    width: 284px;
   }
-} */
-
-/* @media screen and (max-width: 460px){
-  .project__text-title {
-    font-size: 18px;
-    line-height: 21.78px;
-    letter-spacing: 0.04em;
-  }
-} */
+}

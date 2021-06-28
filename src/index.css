@@ -7,13 +7,6 @@
 @import url(./blocks/header/__btn-singup/header__btn-singup.css);
 @import url(./blocks/header/__btn-login/header__btn-login.css);
 
-@import url(./blocks/main/main.css);
-@import url(./blocks/main/__body/main__body.css);
-@import url(./blocks/main/__title/main__title.css);
-@import url(./blocks/main/__logo/main__logo.css);
-@import url(./blocks/main/__footer/main__footer.css);
-@import url(./blocks/main/__footer-link/main__footer-link.css);
-
 @import url(./blocks/project/project.css);
 
 @import url(./blocks/project/__back-end-subtitle/project__back-end-subtitle.css);
@@ -165,6 +158,16 @@
 @import url(./blocks/menu-btn/__line/menu-btn__line.css);
 
 @import url(./blocks/link/link.css);
+
+/* PROMO */
+@import url(./blocks/promo/promo.css);
+@import url(./blocks/promo/__wrapper/promo__wrapper.css);
+@import url(./blocks/promo/__title/promo__title.css);
+@import url(./blocks/promo/__subtitle/promo__subtitle.css);
+@import url(./blocks/promo/__image/promo__image.css);
+@import url(./blocks/promo/__btn/promo__btn.css);
+
+
 
 body {
   margin: 0 auto;

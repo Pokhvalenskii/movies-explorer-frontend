@@ -1,0 +1,6 @@
+.promo {
+  padding: 75px 70px 75px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #073042;
+}

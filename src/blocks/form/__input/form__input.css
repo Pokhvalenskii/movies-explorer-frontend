@@ -1,14 +1,19 @@
 .form__input {
   display: block;
-  margin: 10px auto 20px;
-  padding: 0;
+  margin: 5px auto 20px;
   max-width: 396px;
   width: 100%;
-  height: 46px;
-  border-radius: 8px;
-  /* background-color: #F9F9F9; */
-  background-color: #F9F9F9;
-  border: none
+  height: 30px;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #424242;
+  background-color: #202020;
+}
+
+.form__input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid#4285F4;
 }
 
 .form__input:last-of-type {

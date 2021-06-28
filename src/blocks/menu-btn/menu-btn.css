@@ -10,7 +10,7 @@
 }
 
 .menu-btn:hover .menu-btn__line {
-  opacity: .4;
+  /* opacity: .4; */
   transition: .1s ease;
 }
 

@@ -1,15 +1,31 @@
 .movies__btn {
+  display: block;
+  max-width: 360px;
   width: 100%;
   height: 36px;
   border-radius: 6px;
   border: none;
+  background-color: #202020;
+  border: 1px solid #424242;
   font-size: 12px;
   line-height: 14.52px;
-  margin: 22px 0 80px;
-  padding: 0;
+  margin: 0 auto 80px;  
+  color: #fff;
 }
 
 .movies__btn:hover {
   opacity: .7;
   transition: .2s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .movies__btn {
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .movies__btn {
+    max-width: 240px;
+  }
 }

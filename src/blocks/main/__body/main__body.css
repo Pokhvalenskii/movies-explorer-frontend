@@ -13,3 +13,9 @@
     height: 580px;
   }
 }
+
+@media screen and (max-width: 460px) {
+  .main__body {
+    height: 366px;
+  }
+}

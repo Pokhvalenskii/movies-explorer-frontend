@@ -5,8 +5,18 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 765px){
+  .student__info {
+    /* align-items: center; */
+    flex-direction: column-reverse;
+    margin-top: 0;
+  }
+}
+
 @media screen and (max-width: 460px){
   .student__info {
+    /* align-items: none; */
+
     flex-direction: column-reverse;
     margin-top: 0;
   }

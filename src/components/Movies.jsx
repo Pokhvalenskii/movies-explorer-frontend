@@ -9,14 +9,38 @@ function Movies (props) {
       <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
       <SearchForm />
       <div className='movies__place'>
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
+        <MoviesCard
+        liked={props.liked}
+        likedStatus={props.likedStatus}
+        />
       </div>
       <button className='movies__btn'>Ещё</button>
       <Footer />

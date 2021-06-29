@@ -1,3 +1,6 @@
+.project__text-item {
+  padding-right: 30px;
+}
 
 @media screen and (max-width: 768px){
   .project__text-item {
@@ -8,6 +11,7 @@
 @media screen and (max-width: 460px){
   .project__text-item {
     max-width: 319px;
+    padding-right: 0;
   }
 
   .project__text-item:first-of-type {

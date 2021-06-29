@@ -130,6 +130,9 @@
 @import url(./blocks/card/card.css);
 @import url(./blocks/card/__title/card__title.css);
 @import url(./blocks/card/__like/card__like.css);
+@import url(./blocks/card/__like/_status/card__like_status_enable.css);
+@import url(./blocks/card/__like/_status/card__like_status_disable.css);
+
 @import url(./blocks/card/__film-length/card__film-length.css);
 @import url(./blocks/card/__wrapper/card__wrapper.css);
 @import url(./blocks/card/__img/card__img.css);

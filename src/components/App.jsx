@@ -18,6 +18,7 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
 
   const [burgerActive, setBurgerActive] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   function handleActiveBurger (status) {
     if(burgerActive) {
@@ -28,6 +29,16 @@ function App() {
       document.body.style.overflow = 'hidden';
     }
   }
+
+  function handleLiked (status) {
+    if(liked) {
+      setLiked(false);
+    } else {
+      setLiked(true);
+    }
+  }
+
+
 
   return (
     <div className="App">
@@ -47,13 +58,26 @@ function App() {
           <Register />
         </Route>
         <Route path='/profile'>
-          <Profile isActive={handleActiveBurger} burgerActive={burgerActive}/>
+          <Profile
+          isActive={handleActiveBurger}
+          burgerActive={burgerActive}
+          />
         </Route>
         <Route path='/movies'>
-          <Movies isActive={handleActiveBurger} burgerActive={burgerActive}/>
+          <Movies
+          isActive={handleActiveBurger}
+          burgerActive={burgerActive}
+          liked={handleLiked}
+          likedStatus={liked}
+          />
         </Route>
         <Route path='/saved-movies'>
-         <SavedMovies isActive={handleActiveBurger} burgerActive={burgerActive}/>
+         <SavedMovies
+         isActive={handleActiveBurger}
+         burgerActive={burgerActive}
+         liked={handleLiked}
+         likedStatus={liked}
+         />
         </Route>
         <Route path='*'>
           <NotFoundPage/>

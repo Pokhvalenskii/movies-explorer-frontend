@@ -10,9 +10,9 @@ function Login (props) {
         <h2 className='login__title'>Рады видеть!</h2>
         <form className='form'>
           <p className='form__label'>E-mail</p>
-          <input className='form__input' type='email'/>
+          <input className='form__input' type='email' placeholder='E-mail'/>
           <p className='form__label'>Пароль</p>
-          <input className='form__input' type='password'/>
+          <input className='form__input' type='password' placeholder='пароль'/>
           <button className='form__btn form__btn_type_signin'>Войти</button>
         </form>
         <p className='login__subtitle'>

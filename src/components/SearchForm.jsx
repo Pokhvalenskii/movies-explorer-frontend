@@ -4,7 +4,7 @@ function SearchForm (props) {
   return(
     <form className='search-form'>
       <div className='search-form__wrapper'>
-        <input className='search-form__input' type='text' placeholder='Фильм' />
+        <input className='search-form__input' type='text' placeholder='Фильм' required/>
         <button className='search-form__btn'></button>
       </div>
       <div className='search-form__checkbox'>

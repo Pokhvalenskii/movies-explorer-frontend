@@ -10,11 +10,11 @@ function Register (props) {
         <h2 className='register__title'>Добро пожаловать!</h2>
         <form className='form'>
           <p className='form__label'>Имя</p>
-          <input className='form__input' placeholder='имя'/>
+          <input className='form__input' placeholder='имя' required/>
           <p className='form__label'>E-mail</p>
-          <input className='form__input' type='email' placeholder='E-mail'/>
+          <input className='form__input' type='email' placeholder='E-mail' required/>
           <p className='form__label'>Пароль</p>
-          <input className='form__input' type='password' placeholder='пароль'/>
+          <input className='form__input' type='password' placeholder='пароль' required/>
           <button className='form__btn form__btn_type_signup'>Зарегистрироваться</button>
         </form>
         <p className='register__subtitle'>

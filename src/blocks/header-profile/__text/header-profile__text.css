@@ -1,0 +1,21 @@
+.header-profile__text {
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-profile__text:first-of-type {
+  margin-left: 44px;
+}
+.header-profile__text:last-of-type {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.header-profile__text:hover {
+  opacity: .7;
+  transition: .2s ease;
+}

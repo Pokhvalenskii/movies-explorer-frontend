@@ -1,0 +1,19 @@
+.card {
+display: flex;
+flex-direction: column;
+max-width: 364px;
+background-color: #222222;
+width: 100%;
+}
+
+@media screen and (max-width: 1140px) {
+  .card {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: none;
+  }
+}

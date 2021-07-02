@@ -1,0 +1,16 @@
+.header-profile {
+  padding: 18px 70px;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .header-profile {
+    padding: 18px 30px
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .header-profile {
+    padding: 18px 10px
+  }
+}

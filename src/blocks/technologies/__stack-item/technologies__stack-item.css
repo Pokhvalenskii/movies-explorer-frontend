@@ -1,0 +1,24 @@
+.technologies__stack-item {
+  display: flex;
+  justify-content: center;
+  width: 84px;
+  height: 54px;
+  border-radius: 10px;
+  background-color: #303030;
+}
+
+.technologies__stack-item:last-of-type {
+  margin-right: 0;
+}
+
+.technologies__stack-item:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
+@media screen and (max-width: 768px){
+  .technologies__stack-item {
+    min-width: 84px;
+    min-height: 57px;
+  }
+}

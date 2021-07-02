@@ -1,0 +1,14 @@
+.promo__btn {
+  display: flex;
+  width: 129px;
+  height: 34px;
+  border: solid 1px rgba(255,255,255, .4);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}

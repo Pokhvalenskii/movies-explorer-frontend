@@ -1,0 +1,11 @@
+.promo__image {
+  width: 310px;
+  height: 304px;
+}
+
+@media screen and (max-width: 460px) {
+  .promo__image {
+    width: 210px;
+    height: 206px;
+  }
+}

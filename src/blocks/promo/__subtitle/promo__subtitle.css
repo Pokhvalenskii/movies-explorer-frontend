@@ -1,0 +1,24 @@
+.promo__subtitle {
+  max-width: 310px;
+  font-size: 13px;
+  line-height: 15.73px;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  opacity: .5;
+  margin-bottom: 146px;
+}
+
+@media screen and (max-width: 768px) {
+  .promo__subtitle {
+    margin-bottom: 92px;
+    max-width: 260px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .promo__subtitle {
+    margin-bottom: 80px;
+  }
+}

@@ -1,0 +1,20 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 80px 70px 0;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #424242;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    margin: 80px 30px 0;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .search-form {
+    margin: 80px 10px 0;
+  }
+}

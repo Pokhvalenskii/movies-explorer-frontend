@@ -1,0 +1,43 @@
+.menu__line,
+.menu__line::after,
+.menu__line::before {
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+}
+
+.menu__line {
+  transition: .3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu__line::after {
+  transition: .3s ease;
+  content: '';
+  top: -7px;
+}
+
+.menu__line::before {
+  transition: .3s ease;
+  content: '';
+  top: 7px;
+}
+
+.menu__block_active .menu__line {
+  background-color: transparent;
+  transition: .3s ease;
+}
+
+.menu__block_active .menu__line::before {
+  transition: .3s ease;
+  top: 0;
+  transform: rotate(45deg);
+}
+.menu__block_active .menu__line::after {
+  transition: .3s ease;
+  top: 0;
+  transform: rotate(-45deg);
+}

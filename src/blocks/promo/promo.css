@@ -1,0 +1,22 @@
+.promo {
+  padding: 75px 70px 75px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #073042;
+}
+
+@media screen and (max-width: 768px) {
+  .promo {
+    padding: 140px 30px 75px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .promo {
+    padding: 70px 10px 30px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}

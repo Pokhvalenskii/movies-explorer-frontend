@@ -1,0 +1,20 @@
+.student__text {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px){
+  .student__text {
+    width: 365px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .student__text {
+    width: 292px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

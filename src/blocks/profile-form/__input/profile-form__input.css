@@ -1,0 +1,13 @@
+.profile-form__input {
+  width: 100%;
+  border: none;
+  outline-offset: 0;
+  color: #fff;
+  background-color: #202020;
+}
+
+.profile-form__input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid#4285F4;
+}

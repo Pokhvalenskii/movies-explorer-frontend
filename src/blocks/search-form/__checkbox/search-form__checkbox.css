@@ -1,0 +1,14 @@
+.search-form__checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 28px auto 0;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form__checkbox {
+    align-items: center;
+    justify-content: center;
+    margin-top: 38px;
+  }
+}

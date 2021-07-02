@@ -1,0 +1,20 @@
+.portfolio__link {
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #000;
+}
+
+.portfolio__link:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
+.portfolio__link:not(:last-of-type)::after {
+  display: block;
+  content: "";
+  margin-top: 19px;
+  border-bottom: 1px solid #424242;
+  width: 100%;
+  max-width: 1140px;
+}

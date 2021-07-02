@@ -1,0 +1,25 @@
+.portfolio__link-item {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #fff;
+}
+
+.portfolio__link-item:last-of-type {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px){
+  .portfolio__link-item {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .portfolio__link-item {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+  }
+}

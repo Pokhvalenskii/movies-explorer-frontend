@@ -1,0 +1,15 @@
+.student__media {
+  margin: 99px 0 0;
+}
+
+@media screen and (max-width: 768px){
+  .student__media {
+    margin: 87px 0 0;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .student__media {
+    margin: 40px 0 0;
+  }
+}

@@ -1,0 +1,16 @@
+.login__subtitle {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #a0a0a0;
+}
+
+@media screen and (max-width: 460px) {
+  .login__subtitle {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

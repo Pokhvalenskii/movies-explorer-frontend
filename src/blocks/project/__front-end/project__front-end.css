@@ -1,0 +1,13 @@
+.project__front-end {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 460px) {
+  .project__front-end {
+    min-width: 184px;
+    min-height: 70px;
+  }
+}

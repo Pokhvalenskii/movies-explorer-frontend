@@ -1,0 +1,19 @@
+.header__btn-singup {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.header__btn-singup:hover {
+  opacity: .7;
+  transition: .2s ease;
+}
+
+@media screen and (max-width: 460px) {
+  .header__btn-singup {
+    margin-right: 14px;
+  }
+}

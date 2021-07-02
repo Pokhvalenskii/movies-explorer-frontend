@@ -1,0 +1,27 @@
+.menu__block {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 0;
+  right: 0;
+  padding: 18px 30px 18px;
+}
+
+.menu__block:hover .menu__line {
+  opacity: .4;
+  transition: .1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu__block {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .menu__block {
+    padding: 28px 10px 0;
+  }
+}

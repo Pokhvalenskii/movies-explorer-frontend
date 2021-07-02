@@ -1,0 +1,10 @@
+.student__texts {
+  max-width: 600px;
+  padding-right: 49px;
+}
+
+@media screen and (max-width: 460px){
+  .student__texts {
+    padding-right: 0;
+  }
+}

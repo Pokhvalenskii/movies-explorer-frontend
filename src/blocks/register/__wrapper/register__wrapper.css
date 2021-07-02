@@ -1,0 +1,15 @@
+.register__wrapper {
+  padding: 70px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .register__wrapper {
+    padding: 236px 0;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .register__wrapper {
+    padding: 70px 20px 40px;
+  }
+}

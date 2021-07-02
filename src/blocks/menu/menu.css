@@ -1,0 +1,16 @@
+.menu {
+  display: none;
+  /* display: flex; */
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+}

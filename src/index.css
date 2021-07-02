@@ -1,0 +1,186 @@
+@import url(./vendor/normalize.css);
+@import url(./fonts/inter.css);
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__wrapper/header__wrapper.css);
+@import url(./blocks/header/__btn-singup/header__btn-singup.css);
+@import url(./blocks/header/__btn-login/header__btn-login.css);
+
+@import url(./blocks/project/project.css);
+
+@import url(./blocks/project/__back-end-subtitle/project__back-end-subtitle.css);
+@import url(./blocks/project/__back-end-title/project__back-end-title.css);
+@import url(./blocks/project/__back-end-title/_theme/project__back-end-title_theme_back-end.css);
+@import url(./blocks/project/__back-end/project__back-end.css);
+
+@import url(./blocks/project/__front-end/project__front-end.css);
+@import url(./blocks/project/__front-end-title/project__front-end-title.css);
+@import url(./blocks/project/__front-end-title/_theme/project__front-end-title_theme_front-end.css);
+@import url(./blocks/project/__front-end-subtitle/project__front-end-subtitle.css);
+
+@import url(./blocks/project/__progress-bar/project__progress-bar.css);
+@import url(./blocks/project/__text-item/project__text-item.css);
+@import url(./blocks/project/__text-subtitle/project__text-subtitle.css);
+@import url(./blocks/project/__text-title/project__text-title.css);
+@import url(./blocks/project/__texts/project__texts.css);
+
+@import url(./blocks/section-title/section-title.css);
+
+@import url(./blocks/technologies/technologies.css);
+@import url(./blocks/technologies/__title/technologies__title.css);
+@import url(./blocks/technologies/__subtitle/technologies__subtitle.css);
+@import url(./blocks/technologies/__stack/technologies__stack.css);
+@import url(./blocks/technologies/__stack-name/technologies__stack-name.css);
+@import url(./blocks/technologies/__stack-item/technologies__stack-item.css);
+
+@import url(./blocks/student/student.css);
+@import url(./blocks/student/__title/student__title.css);
+@import url(./blocks/student/__texts/student__texts.css);
+@import url(./blocks/student/__text/student__text.css);
+@import url(./blocks/student/__subtitle/student__subtitle.css);
+@import url(./blocks/student/__photo/student__photo.css);
+@import url(./blocks/student/__media/student__media.css);
+@import url(./blocks/student/__media-item/student__media-item.css);
+@import url(./blocks/student/__info/student__info.css);
+
+@import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/portfolio/__title/portfolio__title.css);
+@import url(./blocks/portfolio/__link/portfolio__link.css);
+@import url(./blocks/portfolio/__link-item/portfolio__link-item.css);
+@import url(./blocks/portfolio/__wrapper-item/portfolio__wrapper-item.css);
+@import url(./blocks/portfolio/__link-logo/portfolio__link-logo.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__text/footer__text.css);
+@import url(./blocks/footer/__list/footer__list.css);
+@import url(./blocks/footer/__list-item/footer__list-item.css);
+@import url(./blocks/footer/__links/footer__links.css);
+@import url(./blocks/footer/__link/footer__link.css);
+@import url(./blocks/footer/__copytight/footer__copyright.css);
+
+/* FORM */
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__label/form__label.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__btn/form__btn.css);
+@import url(./blocks/form/__btn/_type/form__btn_type_signin.css);
+@import url(./blocks/form/__btn/_type/form__btn_type_signup.css);
+
+/* REGISTER */
+@import url(./blocks/register/register.css);
+@import url(./blocks/register/__wrapper/register__wrapper.css);
+@import url(./blocks/register/__title/register__title.css);
+@import url(./blocks/register/__subtitle/register__subtitle.css);
+@import url(./blocks/register/__link/register__link.css);
+@import url(./blocks/register/__wrapper-logo/register__wrapper-logo.css);
+
+/* LOGO */
+@import url(./blocks/logo/logo.css);
+
+/* LOGIN */
+@import url(./blocks/login/login.css);
+@import url(./blocks/login/__wrapper/login__wrapper.css);
+@import url(./blocks/login/__title/login__title.css);
+@import url(./blocks/login/__subtitle/login__subtitle.css);
+@import url(./blocks/login/__link/login__link.css);
+@import url(./blocks/login/__wrapper-logo/login__wrapper-logo.css);
+
+/* NOTFOUND */
+@import url(./blocks/not-found/__redirect/not-found__redirect.css);
+@import url(./blocks/not-found/__subtitle/not-found__subtitle.css);
+@import url(./blocks/not-found/__title/not-found__title.css);
+@import url(./blocks/not-found/not-found.css);
+
+/* ICON-BLOCK */
+@import url(./blocks/icon-block/icon-block.css);
+@import url(./blocks/icon-block/__img/icon-block__img.css);
+
+/* PROFILE */
+
+@import url(./blocks/header-profile/header-profile.css);
+@import url(./blocks/header-profile/__text/header-profile__text.css);
+@import url(./blocks/header-profile/__text/_type/header-profile__text_type_fat.css);
+@import url(./blocks/header-profile/__nav/header-profile__nav.css);
+
+/* PROFILE-FORM */
+@import url(./blocks/profile-form/profile-form.css);
+@import url(./blocks/profile-form/__title/profile-form__title.css);
+@import url(./blocks/profile-form/__input/profile-form__input.css);
+@import url(./blocks/profile-form/__btn/profile-form__btn.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_edit.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
+@import url(./blocks/profile-form/__input-wrapper/profile-form__input-wrapper.css);
+@import url(./blocks/profile-form/__input-label/profile-form__input-label.css);
+
+/* SEARCH */
+@import url(./blocks/search-form/search-form.css);
+@import url(./blocks/search-form/__wrapper/search-form__wrapper.css);
+@import url(./blocks/search-form/__input/search-form__input.css);
+@import url(./blocks/search-form/__btn/search-form__btn.css);
+@import url(./blocks/search-form/__checkbox/search-form__checkbox.css);
+@import url(./blocks/search-form/__checkbox-text/search-form__checkbox-text.css);
+
+/* CHECKBOX */
+@import url(./blocks/checkbox/checkbox.css);
+@import url(./blocks/checkbox/__input/checkbox__input.css);
+@import url(./blocks/checkbox/__state/checkbox__state.css);
+
+/* CARD */
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__like/card__like.css);
+@import url(./blocks/card/__like/_status/card__like_status_enable.css);
+@import url(./blocks/card/__like/_status/card__like_status_disable.css);
+
+@import url(./blocks/card/__film-length/card__film-length.css);
+@import url(./blocks/card/__wrapper/card__wrapper.css);
+@import url(./blocks/card/__img/card__img.css);
+
+@import url(./blocks/movies/movies.css);
+@import url(./blocks/movies/__place/movie__place.css);
+@import url(./blocks/movies/__btn/movies__btn.css);
+
+@import url(./blocks/savedMovies/savedMovies.css);
+@import url(./blocks/savedMovies/__place/savedMovies__place.css);
+
+@import url(./blocks/profile/profile.css);
+
+@import url(./blocks/menu/menu.css);
+@import url(./blocks/menu/__line/menu__line.css);
+@import url(./blocks/menu/__block/menu__block.css);
+@import url(./blocks/menu/__link/menu__link.css);
+@import url(./blocks/menu/__list-item/menu__list-item.css);
+@import url(./blocks/menu/__list/menu__list.css);
+@import url(./blocks/menu/__overlay/menu__overlay.css);
+@import url(./blocks/menu/__wrapper/menu__wrapper.css);
+
+/* MENU-BTN */
+
+@import url(./blocks/menu-btn/menu-btn.css);
+@import url(./blocks/menu-btn/__line/menu-btn__line.css);
+
+@import url(./blocks/link/link.css);
+
+/* PROMO */
+@import url(./blocks/promo/promo.css);
+@import url(./blocks/promo/__wrapper/promo__wrapper.css);
+@import url(./blocks/promo/__title/promo__title.css);
+@import url(./blocks/promo/__subtitle/promo__subtitle.css);
+@import url(./blocks/promo/__image/promo__image.css);
+@import url(./blocks/promo/__btn/promo__btn.css);
+
+
+
+body {
+  background-color: #202020;
+  color: #fff;
+  margin: 0 auto;
+  max-width: 1280px;
+  min-width: 320px;
+  font-family: 'Inter', 'Arial', 'sans-serif';
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 22px;
+}

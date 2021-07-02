@@ -1,0 +1,15 @@
+.menu__list {
+  padding-top: 159px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  background-color: #202020;
+}
+
+@media screen and (max-width: 460px) {
+  .menu__list {
+    width: 100%;
+  }
+}

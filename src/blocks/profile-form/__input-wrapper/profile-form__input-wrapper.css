@@ -1,0 +1,15 @@
+.profile-form__input-wrapper {
+  display: flex;
+  max-width: 410px;
+  width: 100%;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.30px;
+
+}
+
+.profile-form__input-wrapper:first-of-type {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #424242;
+  margin-bottom: 17px;
+}

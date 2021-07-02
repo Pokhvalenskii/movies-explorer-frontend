@@ -1,0 +1,10 @@
+.project__texts {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 460px) {
+  .project__texts {
+    flex-direction: column;
+  }
+}

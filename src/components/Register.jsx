@@ -9,15 +9,15 @@ function Register (props) {
   const [userEmail, setUserEmail] = useState('');
 
 
-  function handleChandeUserName (e) {
+  function handleChangeUserName (e) {
     setUserName(e.target.value)
   };
 
-  function handleChandeUserPassword (e) {
+  function handleChangeUserPassword (e) {
     setUserPassword(e.target.value)
   };
 
-  function handleChandeUserEmail (e) {
+  function handleChangeUserEmail (e) {
     setUserEmail(e.target.value)
   };
 
@@ -48,7 +48,7 @@ function Register (props) {
             placeholder='имя'
             required
             value={userName}
-            onChange={handleChandeUserName}
+            onChange={handleChangeUserName}
           />
           <p className='form__label'>E-mail</p>
           <input
@@ -57,7 +57,7 @@ function Register (props) {
             placeholder='E-mail'
             required
             value={userEmail}
-            onChange={handleChandeUserEmail}
+            onChange={handleChangeUserEmail}
           />
           <p className='form__label'>Пароль</p>
           <input
@@ -66,7 +66,7 @@ function Register (props) {
             placeholder='пароль'
             required
             value={userPassword}
-            onChange={handleChandeUserPassword}
+            onChange={handleChangeUserPassword}
           />
           <button
           className='form__btn form__btn_type_signup' type='submit'>Зарегистрироваться</button>

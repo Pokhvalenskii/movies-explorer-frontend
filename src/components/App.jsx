@@ -1,9 +1,3 @@
-// import Header from './Header';
-// import Promo from './Promo';
-// import Project from './Project';
-// import Technologies from './Technologies'
-// import Student from './Student';
-// import Footer from './Footer';
 import Register from './Register';
 import Login from './Login';
 import NotFoundPage from './NotFoundPage';
@@ -115,53 +109,63 @@ function App() {
     history.push('/')
   }
 
+  function editProfile (data) {
+    mainApi._editUser({
+      email: data.email,
+      name: data.name,
+      jwt: JWTtoken
+    })
+      .then(res => {
+        setCurrentUser(res);
+      })
+  }
+
   return (
-    <div className="App">
-      <CurrentUserContext.Provider value={currentUser}>
-        <Switch>
-          <Route exact path='/'>
-            <Main loggedIn={loggedIn}/>
-          </Route>
-          <Route path='/signin'>
-            <Login
-              signin={handleSignin}
-            />
-          </Route>
-          <Route path='/signup'>
-            <Register
-              signup={handleSignup}
-            />
-          </Route>
-          <ProtectedRoute path='/profile' loggedIn={loggedIn}>
-            <Profile
-              logout={logout}
-              isActive={handleActiveBurger}
-              burgerActive={burgerActive}
-              userName={userName}
-            />
-          </ProtectedRoute>
-          <ProtectedRoute path='/movies' loggedIn={loggedIn}>
-            <Movies
-              isActive={handleActiveBurger}
-              burgerActive={burgerActive}
-              liked={handleLiked}
-              likedStatus={liked}
-            />
-          </ProtectedRoute>
-          <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>
-            <SavedMovies
-              isActive={handleActiveBurger}
-              burgerActive={burgerActive}
-              liked={handleLiked}
-              likedStatus={liked}
-            />
-          </ProtectedRoute>
-          <Route path='*'>
-            <NotFoundPage/>
-          </Route>
-        </Switch>
-      </CurrentUserContext.Provider>
-    </div>
+    <CurrentUserContext.Provider value={currentUser}>
+      <Switch>
+        <Route exact path='/'>
+          <Main loggedIn={loggedIn}/>
+        </Route>
+        <Route path='/signin'>
+          <Login
+            signin={handleSignin}
+          />
+        </Route>
+        <Route path='/signup'>
+          <Register
+            signup={handleSignup}
+          />
+        </Route>
+        <ProtectedRoute path='/profile' loggedIn={loggedIn}>
+          <Profile
+            logout={logout}
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
+            userName={userName}
+            editProfile={editProfile}
+          />
+        </ProtectedRoute>
+        <ProtectedRoute path='/movies' loggedIn={loggedIn}>
+          <Movies
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
+            liked={handleLiked}
+            likedStatus={liked}
+          />
+        </ProtectedRoute>
+        <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>
+          <SavedMovies
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
+            liked={handleLiked}
+            likedStatus={liked}
+          />
+        </ProtectedRoute>
+        <Route path='*'>
+          <NotFoundPage/>
+        </Route>
+      </Switch>
+    </CurrentUserContext.Provider>
   );
 }
 

@@ -7,11 +7,11 @@ function Login (props) {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
-  function handleChandeUserPassword (e) {
+  function handleChangeUserPassword (e) {
     setUserPassword(e.target.value)
   };
 
-  function handleChandeUserEmail (e) {
+  function handleChangeUserEmail (e) {
     setUserEmail(e.target.value)
   };
 
@@ -40,7 +40,7 @@ function Login (props) {
             type='email'
             placeholder='E-mail'
             required
-            onChange={handleChandeUserEmail}
+            onChange={handleChangeUserEmail}
             value={userEmail}
           />
           <p className='form__label'>Пароль</p>
@@ -49,7 +49,7 @@ function Login (props) {
             type='password'
             placeholder='пароль'
             required
-            onChange={handleChandeUserPassword}
+            onChange={handleChangeUserPassword}
             value={userPassword}
           />
           <button className='form__btn form__btn_type_signin' type='submit'>Войти</button>

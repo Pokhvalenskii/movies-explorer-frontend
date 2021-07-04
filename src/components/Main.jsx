@@ -6,8 +6,6 @@ import Student from './Student';
 import Footer from './Footer';
 import HeaderProfile from './HeaderProfile';
 function Main (props) {
-  console.log('LOGGEDID ', props.loggedIn)
-
   return (
     <>
       {props.loggedIn ? <HeaderProfile loggedIn={props.loggedIn}/> : <Header/>}

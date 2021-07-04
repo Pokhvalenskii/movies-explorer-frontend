@@ -23,9 +23,9 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const JWTtoken = localStorage.getItem('jwt');
   const [movies, setMovies] = useState({});
-
+  // console.log(movies)
   useEffect(() => {
-    console.log('первая проверка авторизации. JWT-', JWTtoken, movies)
+    // console.log('первая проверка авторизации. JWT-', JWTtoken, movies)
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies()])
         .then(value => {
@@ -78,9 +78,9 @@ function App() {
           jwt: res.token
         })
           .then(user => {
-            console.log('USER', user)
+            // console.log('USER', user)
             setCurrentUser(user);
-            console.log('CONTEXT:', currentUser)
+            // console.log('CONTEXT:', currentUser)
             setUserEmail(user.email);
             setUserName(user.name);
           })
@@ -91,7 +91,7 @@ function App() {
   }
 
   const checkLoggedIn = useCallback(() => {
-    console.log('checkLoggedIn')
+    // console.log('checkLoggedIn')
     if(JWTtoken !== null) {
       mainApi._getMe({ jwt: JWTtoken })
         .then(res => {
@@ -159,6 +159,7 @@ function App() {
             burgerActive={burgerActive}
             liked={handleLiked}
             likedStatus={liked}
+            movies={movies}
           />
         </ProtectedRoute>
         <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>

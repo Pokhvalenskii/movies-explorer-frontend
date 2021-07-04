@@ -2,7 +2,8 @@ function MoviesCard (props) {
 
   const isLiked = props.likedStatus;
   const like = isLiked ? 'card__like_status_enable' : '';
-
+  const movie = props.movie;
+  // console.log(movie.image.url)
   function handleLike() {
     props.liked();
   }
@@ -15,7 +16,7 @@ function MoviesCard (props) {
       </div>
       <p className='card__film-length'>2ч 5м</p>
       <div className='card__wrapper-img'>
-        <img className='card__img' src="https://www.soyuz.ru/public/uploads/files/2/7446725/20200918112442b2267e02b5.png" alt="URL КАРТОЧКА" />
+        <img className='card__img' src={`https://api.nomoreparties.co${movie.image.url}`} alt="URL КАРТОЧКА" />
       </div>
     </article>
   );

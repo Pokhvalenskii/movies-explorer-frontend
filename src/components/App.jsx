@@ -11,6 +11,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import mainApi from '../utils/MainApi';
+import moviesApi from '../utils/MoviesApi';
 
 function App() {
   const history = useHistory();
@@ -21,19 +22,24 @@ function App() {
   const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const JWTtoken = localStorage.getItem('jwt');
-
+  const [movies, setMovies] = useState({});
 
   useEffect(() => {
-    console.log('первая проверка авторизации. JWT-', JWTtoken)
+    console.log('первая проверка авторизации. JWT-', JWTtoken, movies)
     if(JWTtoken !== null) {
-      Promise.all([mainApi._getMe({ jwt: JWTtoken })])
+      Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies()])
         .then(value => {
           setCurrentUser(value[0])
+          setMovies(value[1])
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
     }
   }, []);
+
+  function getMovies () {
+    return moviesApi.getMovies();
+  }
 
   function handleActiveBurger (status) {
     if(burgerActive) {
@@ -119,6 +125,8 @@ function App() {
         setCurrentUser(res);
       })
   }
+
+
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

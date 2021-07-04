@@ -10,15 +10,19 @@ import NotFoundPage from './NotFoundPage';
 import Profile from './Profile';
 import Movies from './Movies'
 import SavedMovies from './SavedMovies'
-//init branch level-3
 import { useState } from 'react';
-
 import { Switch, Route } from 'react-router-dom';
+
+import mainApi from '../utils/MainApi';
 
 function App() {
 
   const [burgerActive, setBurgerActive] = useState(false);
   const [liked, setLiked] = useState(false);
+
+  const [userName, setUserName] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [userEmail, setUserEmail] = useState('');
 
   function handleActiveBurger (status) {
     if(burgerActive) {
@@ -38,7 +42,15 @@ function App() {
     }
   }
 
+  // REGISTRATION
 
+  function handleSignup (data) {
+    mainApi._signup(data)
+      .then(() => {
+        setUserName(data.name);
+        setUserEmail(data.email);
+      })
+  }
 
   return (
     <div className="App">
@@ -55,28 +67,30 @@ function App() {
           <Login />
         </Route>
         <Route path='/signup'>
-          <Register />
+          <Register
+            signup={handleSignup}
+          />
         </Route>
         <Route path='/profile'>
           <Profile
-          isActive={handleActiveBurger}
-          burgerActive={burgerActive}
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
           />
         </Route>
         <Route path='/movies'>
           <Movies
-          isActive={handleActiveBurger}
-          burgerActive={burgerActive}
-          liked={handleLiked}
-          likedStatus={liked}
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
+            liked={handleLiked}
+            likedStatus={liked}
           />
         </Route>
         <Route path='/saved-movies'>
          <SavedMovies
-         isActive={handleActiveBurger}
-         burgerActive={burgerActive}
-         liked={handleLiked}
-         likedStatus={liked}
+          isActive={handleActiveBurger}
+          burgerActive={burgerActive}
+          liked={handleLiked}
+          likedStatus={liked}
          />
         </Route>
         <Route path='*'>

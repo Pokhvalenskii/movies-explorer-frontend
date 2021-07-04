@@ -114,7 +114,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  urlApi: 'https://api.lenskii.nomoredomains.icu/'
+  // urlApi: 'https://api.lenskii.nomoredomains.icu/'
+  urlApi: 'http://localhost:3001'
 })
 
 export default mainApi;

@@ -1,14 +1,16 @@
-import logo from '../images/logo.svg'
+import logo from '../images/logo.svg';
+import { Link } from 'react-router-dom';
+
 
 function Header (props) {
   return (
     <header className='header'>
-      <a href='/'>
+      <Link to='/'>
         <img className='logo' src={logo} alt='Логотип'/>
-      </a>
+      </Link>
       <div className='header__wrapper'>
-        <a className='header__btn-singup' href='/signup'>Регистрация</a>
-        <a className='header__btn-login' href='/signin'>Войти</a>
+        <Link className='header__btn-singup' to='/signup'>Регистрация</Link>
+        <Link className='header__btn-login' to='/signin'>Войти</Link>
       </div>
     </header>
   );

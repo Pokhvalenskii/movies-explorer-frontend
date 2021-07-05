@@ -15,7 +15,8 @@ function Movies (props) {
           liked={props.liked}
           likedStatus={props.likedStatus}
           movie={movie}
-        />))}
+        />
+        ))}
       </div>
       <button className='movies__btn'>Ещё</button>
       <Footer />

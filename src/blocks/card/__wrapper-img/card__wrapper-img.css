@@ -1,0 +1,17 @@
+.card__wrapper-img {
+  /* object-fit: cover; */
+  /* min-height: 203px;   */
+  height: 203px;
+}
+
+@media screen and (max-width: 768px) {
+  .card__wrapper-img {
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .card__wrapper-img {
+    height: 168px;
+  }
+}

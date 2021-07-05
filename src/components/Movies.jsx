@@ -9,38 +9,13 @@ function Movies (props) {
       <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
       <SearchForm />
       <div className='movies__place'>
+        {props.movies.map(movie => (
         <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
-        <MoviesCard
-        liked={props.liked}
-        likedStatus={props.likedStatus}
-        />
+          key={movie.id}
+          liked={props.liked}
+          likedStatus={props.likedStatus}
+          movie={movie}
+        />))}
       </div>
       <button className='movies__btn'>Ещё</button>
       <Footer />

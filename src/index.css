@@ -102,6 +102,7 @@
 @import url(./blocks/header-profile/__text/header-profile__text.css);
 @import url(./blocks/header-profile/__text/_type/header-profile__text_type_fat.css);
 @import url(./blocks/header-profile/__nav/header-profile__nav.css);
+@import url(./blocks/header-profile/_loggedIn/header-profile_loggedIn.css);
 
 /* PROFILE-FORM */
 @import url(./blocks/profile-form/profile-form.css);

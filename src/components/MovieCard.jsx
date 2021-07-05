@@ -8,13 +8,28 @@ function MoviesCard (props) {
     props.liked();
   }
 
+  function timeConversion (minutes) {
+    let hours = Math.trunc(minutes/60);
+    let mins = minutes % 60;
+      if(hours === 0) {
+        return mins + 'м';
+      }
+      if(mins === 0) {
+        return hours + 'ч';
+      }
+      else {
+        return  hours + 'ч ' + mins + 'м';
+      }
+  }
+
+  console.log('MOVIE', props.movie)
   return(
     <article className='card'>
       <div className='card__wrapper'>
-        <h2 className='card__title'>Lock, Stock and Two Smoking Barrels</h2>
+        <h2 className='card__title'>{props.movie.nameRU}</h2>
         <div className={`card__like ${like}`} onClick={handleLike}></div>
       </div>
-      <p className='card__film-length'>2ч 5м</p>
+      <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
       <div className='card__wrapper-img'>
         <img className='card__img' src={`https://api.nomoreparties.co${movie.image.url}`} alt="URL КАРТОЧКА" />
       </div>

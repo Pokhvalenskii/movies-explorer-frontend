@@ -101,7 +101,7 @@ class MainApi {
   }
 
   _deleteMovie (data) {
-    return fetch (`${this._urlApi}/movies/movieId`, {
+    return fetch (`${this._urlApi}/movies/${data.movieId}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',

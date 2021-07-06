@@ -16,7 +16,6 @@ import moviesApi from '../utils/MoviesApi';
 function App() {
   const history = useHistory();
   const [burgerActive, setBurgerActive] = useState(false);
-  // const [liked, setLiked] = useState(false);
   const [currentUser, setCurrentUser] = useState({})
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -26,11 +25,12 @@ function App() {
   // console.log(movies)
   useEffect(() => {
     if(JWTtoken !== null) {
-      Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies()])
+      Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()])
         .then(value => {
           setCurrentUser(value[0])
           console.log('добавление в локал сторедж: ')
           localStorage.setItem('movies', JSON.stringify(value[1]))
+          localStorage.setItem('savedMovies', JSON.stringify(value[2]))
           // setMovies(value[1])
           setLoggedIn(true);
         })
@@ -42,6 +42,12 @@ function App() {
     return moviesApi.getMovies();
   }
 
+  function getSavedMovies () {
+    return mainApi._getMovies({
+      jwt: JWTtoken,
+    });
+  }
+
   function handleActiveBurger (status) {
     if(burgerActive) {
       setBurgerActive(false);
@@ -51,14 +57,6 @@ function App() {
       document.body.style.overflow = 'hidden';
     }
   }
-
-  // function handleLiked (status) {
-  //   if(liked) {
-  //     setLiked(false);
-  //   } else {
-  //     setLiked(true);
-  //   }
-  // }
 
   // REGISTRATION
   function handleSignup (data) {
@@ -153,6 +151,16 @@ function App() {
       })
   }
 
+  function deleteMovie (movie) {
+    mainApi._deleteMovie({
+      movieId: movie.movieId,
+      jwt: JWTtoken,
+    })
+      .then(res => {
+        console.log('deleteMovie: ', res)
+      })
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
@@ -191,6 +199,7 @@ function App() {
           <SavedMovies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
+            saveMovie={deleteMovie}
           />
         </ProtectedRoute>
         <Route path='*'>

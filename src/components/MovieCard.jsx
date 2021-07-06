@@ -3,11 +3,10 @@ function MoviesCard (props) {
   const isLiked = props.likedStatus;
   const like = isLiked ? 'card__like_status_enable' : '';
   const movie = props.movie;
-  // props.saveMovie
+  const movieImage = props.movie.image.url ? 'https://api.nomoreparties.co' + props.movie.image.url : props.movie.image;
 
   function handleSaveMovie () {
     props.saveMovie(movie);
-
   }
 
   function timeConversion (minutes) {
@@ -24,7 +23,7 @@ function MoviesCard (props) {
       }
   }
 
-  console.log('MOVIE', props.movie)
+  console.log('MOVIE', movieImage)
   return(
     <article className='card'>
       <div className='card__wrapper'>
@@ -33,7 +32,7 @@ function MoviesCard (props) {
       </div>
       <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
       <div className='card__wrapper-img'>
-        <img className='card__img' src={`https://api.nomoreparties.co${movie.image.url}`} alt="URL КАРТОЧКА" />
+        <img className='card__img' src={`${movieImage}`} alt="URL КАРТОЧКА" />
       </div>
     </article>
   );

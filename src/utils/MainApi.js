@@ -76,6 +76,7 @@ class MainApi {
   }
 
   _addMovie (data) {
+    console.log('data', data)
     return fetch (`${this._urlApi}/movies`, {
       method: 'POST',
       headers: {

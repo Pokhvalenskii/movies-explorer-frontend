@@ -3,9 +3,11 @@ function MoviesCard (props) {
   const isLiked = props.likedStatus;
   const like = isLiked ? 'card__like_status_enable' : '';
   const movie = props.movie;
-  // console.log(movie.image.url)
-  function handleLike() {
-    props.liked();
+  // props.saveMovie
+
+  function handleSaveMovie () {
+    props.saveMovie(movie);
+
   }
 
   function timeConversion (minutes) {
@@ -27,7 +29,7 @@ function MoviesCard (props) {
     <article className='card'>
       <div className='card__wrapper'>
         <h2 className='card__title'>{props.movie.nameRU}</h2>
-        <div className={`card__like ${like}`} onClick={handleLike}></div>
+        <div className={`card__like ${like}`} onClick={handleSaveMovie}></div>
       </div>
       <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
       <div className='card__wrapper-img'>

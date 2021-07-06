@@ -16,21 +16,22 @@ import moviesApi from '../utils/MoviesApi';
 function App() {
   const history = useHistory();
   const [burgerActive, setBurgerActive] = useState(false);
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
   const [currentUser, setCurrentUser] = useState({})
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const JWTtoken = localStorage.getItem('jwt');
-  const [movies, setMovies] = useState({});
+  const [movies, setMovies] = useState([]);
   // console.log(movies)
   useEffect(() => {
-    // console.log('первая проверка авторизации. JWT-', JWTtoken, movies)
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies()])
         .then(value => {
           setCurrentUser(value[0])
-          setMovies(value[1])
+          console.log('добавление в локал сторедж: ')
+          localStorage.setItem('movies', JSON.stringify(value[1]))
+          // setMovies(value[1])
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
@@ -51,13 +52,13 @@ function App() {
     }
   }
 
-  function handleLiked (status) {
-    if(liked) {
-      setLiked(false);
-    } else {
-      setLiked(true);
-    }
-  }
+  // function handleLiked (status) {
+  //   if(liked) {
+  //     setLiked(false);
+  //   } else {
+  //     setLiked(true);
+  //   }
+  // }
 
   // REGISTRATION
   function handleSignup (data) {
@@ -126,7 +127,31 @@ function App() {
       })
   }
 
+  function foundMovies (movies) {
+    setMovies(movies);
+    console.log('foundMovies', movies)
+  }
 
+  function saveMovie (movie) {
+    console.log('saveMovie', movie)
+    mainApi._addMovie({
+      country: movie.country,
+      director: movie.director,
+      duration: movie.duration,
+      year: movie.year,
+      description: movie.description,
+      image: 'https://api.nomoreparties.co' + movie.image.url,
+      trailer: movie.trailerLink,
+      nameRU: movie.nameRU,
+      nameEN: movie.nameEN,
+      thumbnail: 'https://api.nomoreparties.co' + movie.image.formats.thumbnail.url,
+      movieId: movie.id,
+      jwt: JWTtoken,
+    })
+      .then(res => {
+        console.log('добавили фильм', res)
+      })
+  }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -157,17 +182,15 @@ function App() {
           <Movies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            liked={handleLiked}
-            likedStatus={liked}
             movies={movies}
+            foundMovies={foundMovies}
+            saveMovie={saveMovie}
           />
         </ProtectedRoute>
         <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>
           <SavedMovies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            liked={handleLiked}
-            likedStatus={liked}
           />
         </ProtectedRoute>
         <Route path='*'>

@@ -22,6 +22,7 @@ function App() {
   const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [movies, setMovies] = useState([]);
+
   const [savedMovies, setSavedMovies] = useState({});
 
   // console.log(movies)
@@ -29,12 +30,12 @@ function App() {
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()])
         .then(value => {
-          setCurrentUser(value[0])
           console.log('добавление в локал сторедж: ')
+          console.log(value[2])
+          setCurrentUser(value[0])          
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(value[2]))
-          // setSavedMovies(value[2])
-          // setMovies(value[1])
+          setSavedMovies(value[2]);
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
@@ -135,8 +136,9 @@ function App() {
 
   function saveMovie (movie) {
     console.log('saveMovie', movie)
+    const country = movie.country ? movie.country : 'NONE';
     mainApi._addMovie({
-      country: movie.country,
+      country: country,
       director: movie.director,
       duration: movie.duration,
       year: movie.year,
@@ -151,6 +153,9 @@ function App() {
     })
       .then(res => {
         console.log('добавили фильм', res)
+        getSavedMovies().then(res => {
+          setSavedMovies(res);
+        })        
       })
   }
 
@@ -159,8 +164,11 @@ function App() {
       movieId: movie.movieId,
       jwt: JWTtoken,
     })
-      .then(res => {
+      .then((res) => {
         console.log('deleteMovie: ', res)
+        getSavedMovies().then(res => {
+          setSavedMovies(res);
+        })    
       })
   }
 
@@ -203,6 +211,7 @@ function App() {
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
             saveMovie={deleteMovie}
+            savedMovies={savedMovies}
           />
         </ProtectedRoute>
         <Route path='*'>

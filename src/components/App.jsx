@@ -15,13 +15,15 @@ import moviesApi from '../utils/MoviesApi';
 
 function App() {
   const history = useHistory();
+  const JWTtoken = localStorage.getItem('jwt');
   const [burgerActive, setBurgerActive] = useState(false);
   const [currentUser, setCurrentUser] = useState({})
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
-  const JWTtoken = localStorage.getItem('jwt');
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState({});
+
   // console.log(movies)
   useEffect(() => {
     if(JWTtoken !== null) {
@@ -31,6 +33,7 @@ function App() {
           console.log('добавление в локал сторедж: ')
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(value[2]))
+          // setSavedMovies(value[2])
           // setMovies(value[1])
           setLoggedIn(true);
         })
@@ -127,7 +130,7 @@ function App() {
 
   function foundMovies (movies) {
     setMovies(movies);
-    console.log('foundMovies', movies)
+    // console.log('foundMovies', movies)
   }
 
   function saveMovie (movie) {

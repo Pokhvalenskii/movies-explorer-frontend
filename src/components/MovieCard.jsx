@@ -23,7 +23,7 @@ function MoviesCard (props) {
       }
   }
 
-  console.log('MOVIE', movieImage)
+  // console.log('MOVIE', movieImage)
   return(
     <article className='card'>
       <div className='card__wrapper'>

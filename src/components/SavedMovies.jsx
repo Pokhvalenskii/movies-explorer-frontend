@@ -5,6 +5,7 @@ import HeaderProfile from './HeaderProfile';
 function SavedMovies (props) {
 
   const saveMovies = JSON.parse(localStorage.getItem('savedMovies'));
+  console.log('savedMovie')
 
   return(
     <section className='movies'>

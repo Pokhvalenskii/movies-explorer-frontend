@@ -20,18 +20,17 @@ function App() {
   const [currentUser, setCurrentUser] = useState({})
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(undefined);
   const [movies, setMovies] = useState([]);
 
-  const [savedMovies, setSavedMovies] = useState({});
+  const [savedMovies, setSavedMovies] = useState();
 
   // console.log(movies)
   useEffect(() => {
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()])
         .then(value => {
-          console.log('добавление в локал сторедж: ')
-          console.log(value[2])
+          console.log('Первый useEffect')
           setCurrentUser(value[0])          
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(value[2]))
@@ -39,6 +38,8 @@ function App() {
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
+    } else {
+      setLoggedIn(false);
     }
   }, []);
 

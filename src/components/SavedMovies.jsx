@@ -5,7 +5,8 @@ import HeaderProfile from './HeaderProfile';
 function SavedMovies (props) {
 
   // const savedLocalMovies = JSON.parse(localStorage.getItem('savedMovies'));  // console.log('saved_Movie', props.savedMovies)
-  // console.log('props: ', props.savedMovies, 'local', savedLocalMovies);
+  // console.log('props: ', props.savedMovies);
+  const savedMovies = props.savedMovies ? props.savedMovies : JSON.parse(localStorage.getItem('savedMovies'));
 
   return(
     <section className='movies'>
@@ -13,7 +14,7 @@ function SavedMovies (props) {
       <SearchForm />
       <div className='movies__place'>
         {           
-          props.savedMovies.map(item => (
+          savedMovies.map(item => (
             <MoviesCard
               key={item.movieId}
               saveMovie={props.saveMovie}

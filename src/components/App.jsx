@@ -18,30 +18,40 @@ function App() {
   const JWTtoken = localStorage.getItem('jwt');
   const [burgerActive, setBurgerActive] = useState(false);
   const [currentUser, setCurrentUser] = useState({})
-  const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [jwt, setJwt] = useState({})
+  // const [userName, setUserName] = useState('');
+  // const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(undefined);
   const [movies, setMovies] = useState([]);
-
   const [savedMovies, setSavedMovies] = useState();
+  // const [userMovies, setUserMovies] = useState();
 
-  // console.log(movies)
+  // console.log(savedMovies, 'savedMOVIES INIT')
   useEffect(() => {
     if(JWTtoken !== null) {
-      Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()])
+      Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()]) //
         .then(value => {
           console.log('Первый useEffect')
           setCurrentUser(value[0])          
+          console.log('promise2', value[2][1].owner)
+          let userMovies = []
+          value[2].forEach(movie => {
+            if(movie.owner === value[0]._id) {
+              userMovies.push(movie);
+            }
+          })
+          console.log('userMovie', userMovies)
           localStorage.setItem('movies', JSON.stringify(value[1]))
-          localStorage.setItem('savedMovies', JSON.stringify(value[2]))
-          setSavedMovies(value[2]);
+          localStorage.setItem('savedMovies', userMovies)
+          setSavedMovies(userMovies);
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
     } else {
+      console.log('Сработал но без токена')
       setLoggedIn(false);
     }
-  }, []);
+  }, [jwt]);
 
   function getMovies () {
     return moviesApi.getMovies();
@@ -50,8 +60,21 @@ function App() {
   function getSavedMovies () {
     return mainApi._getMovies({
       jwt: JWTtoken,
-    });
+    })
   }
+
+  // function getSavedMovies () {
+  //   mainApi._getMovies({
+  //     jwt: JWTtoken,
+  //   })
+  //     .then(res => {
+  //       console.log('RES MOvIE:', res)
+  //       let savedMovie = [];
+  //       res.forEach(item => {
+  //         if(item.owner === currentUser)
+  //       })
+  //     })
+  // }
 
   function handleActiveBurger (status) {
     if(burgerActive) {
@@ -76,7 +99,7 @@ function App() {
     return mainApi._signin(data)
       .then((res) => {
         setLoggedIn(true);
-        setUserEmail(data.email);
+        // setUserEmail(data.email);
         console.log('login: jwt - ', res.token)
         mainApi._getMe({
           jwt: res.token
@@ -85,10 +108,11 @@ function App() {
             // console.log('USER', user)
             setCurrentUser(user);
             // console.log('CONTEXT:', currentUser)
-            setUserEmail(user.email);
-            setUserName(user.name);
+            // setUserEmail(user.email);
+            // setUserName(user.name);
           })
         localStorage.setItem('jwt', res.token);
+        setJwt(res.token);
       }).catch(() => {
         // ПОПАП ОШИБКИ ВХОДА
       })
@@ -100,12 +124,12 @@ function App() {
       mainApi._getMe({ jwt: JWTtoken })
         .then(res => {
           setLoggedIn(true)
-          setUserName(res.name);
-          setUserEmail(res.email);
-          history.push('/')
+          // setUserName(res.name);
+          // setUserEmail(res.email);
+          // history.push('/')
         })
     }
-  }, [history]);
+  }, [JWTtoken]);
 
   useEffect(() => {
     checkLoggedIn();
@@ -113,8 +137,9 @@ function App() {
 
   function logout () {
     localStorage.removeItem('jwt');
-    setUserName('');
-    setUserEmail('');
+    localStorage.removeItem('savedMovies')
+    // setUserName('');
+    // setUserEmail('');
     setLoggedIn(false);
     history.push('/')
   }
@@ -149,7 +174,7 @@ function App() {
       nameRU: movie.nameRU,
       nameEN: movie.nameEN,
       thumbnail: 'https://api.nomoreparties.co' + movie.image.formats.thumbnail.url,
-      movieId: movie.id,
+      movieId: String(movie.id) + currentUser._id,
       jwt: JWTtoken,
     })
       .then(res => {
@@ -194,7 +219,7 @@ function App() {
             logout={logout}
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            userName={userName}
+            // userName={userName}
             editProfile={editProfile}
           />
         </ProtectedRoute>

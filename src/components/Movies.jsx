@@ -5,12 +5,12 @@ import HeaderProfile from './HeaderProfile';
 import { useState } from 'react';
 
 function Movies (props) {
-  console.log('movies1, ', props.movies)
+  // console.log('movies1, ', props.movies)
   const moviesTest = [];
   props.movies.forEach(movie => {
     if(movie) {
       moviesTest.push(movie);
-      console.log(moviesTest);
+      // console.log(moviesTest);
     }
   })
   return(

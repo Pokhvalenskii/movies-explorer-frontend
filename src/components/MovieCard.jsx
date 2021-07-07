@@ -23,7 +23,6 @@ function MoviesCard (props) {
       }
   }
 
-  // console.log('MOVIE', movieImage)
   return(
     <article className='card'>
       <div className='card__wrapper'>
@@ -31,9 +30,9 @@ function MoviesCard (props) {
         <div className={`card__like ${like}`} onClick={handleSaveMovie}></div>
       </div>
       <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
-      <div className='card__wrapper-img'>
+      <a className='card__wrapper-img' href={movie.trailer || movie.trailerLink} target='_blank' rel='noreferrer'>
         <img className='card__img' src={`${movieImage}`} alt="URL КАРТОЧКА" />
-      </div>
+      </a>
     </article>
   );
 }

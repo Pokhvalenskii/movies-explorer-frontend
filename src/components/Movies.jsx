@@ -2,7 +2,6 @@ import MoviesCard from './MovieCard';
 import Footer from './Footer';
 import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
-import { useState } from 'react';
 
 function Movies (props) {
   // console.log('movies1, ', props.movies)

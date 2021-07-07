@@ -42,7 +42,7 @@ function App() {
           })
           console.log('userMovie', userMovies)
           localStorage.setItem('movies', JSON.stringify(value[1]))
-          localStorage.setItem('savedMovies', userMovies)
+          localStorage.setItem('savedMovies', JSON.stringify(userMovies))
           setSavedMovies(userMovies);
           setLoggedIn(true);
         })
@@ -50,6 +50,7 @@ function App() {
     } else {
       console.log('Сработал но без токена')
       setLoggedIn(false);
+      history.push('/signin');
     }
   }, [jwt]);
 
@@ -62,19 +63,6 @@ function App() {
       jwt: JWTtoken,
     })
   }
-
-  // function getSavedMovies () {
-  //   mainApi._getMovies({
-  //     jwt: JWTtoken,
-  //   })
-  //     .then(res => {
-  //       console.log('RES MOvIE:', res)
-  //       let savedMovie = [];
-  //       res.forEach(item => {
-  //         if(item.owner === currentUser)
-  //       })
-  //     })
-  // }
 
   function handleActiveBurger (status) {
     if(burgerActive) {
@@ -179,8 +167,14 @@ function App() {
     })
       .then(res => {
         console.log('добавили фильм', res)
-        getSavedMovies().then(res => {
-          setSavedMovies(res);
+        getSavedMovies().then(res => {          
+          let userMovies = []          
+          res.forEach(movie => {
+            if(movie.owner === currentUser._id) {
+              userMovies.push(movie);
+            }
+          })
+          setSavedMovies(userMovies);
         })        
       })
   }
@@ -192,8 +186,14 @@ function App() {
     })
       .then((res) => {
         console.log('deleteMovie: ', res)
-        getSavedMovies().then(res => {
-          setSavedMovies(res);
+        getSavedMovies().then(res => {          
+          let userMovies = []          
+          res.forEach(movie => {
+            if(movie.owner === currentUser._id) {
+              userMovies.push(movie);
+            }
+          })
+          setSavedMovies(userMovies);
         })    
       })
   }

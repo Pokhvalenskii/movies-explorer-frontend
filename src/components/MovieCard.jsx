@@ -1,5 +1,5 @@
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 function MoviesCard (props) {
 
@@ -14,21 +14,20 @@ function MoviesCard (props) {
   const movieImage = props.movie.image.url ? 'https://api.nomoreparties.co' + props.movie.image.url : props.movie.image;
 
   function handleSaveMovie () {
-    console.log('movie: ', movie)
     if(movie.id) {
-      // console.log('/movie');
-      // if(movie.saved) {
-      //   props.deleteMovie(movie.id + currentUser._id)
-      // }
-      if(!movie.saved) {
+      if(movie.saved) {
+        console.log('flag2', movie.saved)
+        props.deleteMovie(movie.id + currentUser._id)
+        movie.saved = false;
+      } else {
+        console.log('flag3', movie.saved)
         props.saveMovie(movie)
+        movie.saved = true;
       }
     }
     if(movie._id) {
-      console.log('/saved-movie');
       props.deleteMovie(movie.movieId)
     }
-    // props.saveMovie(movie);
   }
 
   function timeConversion (minutes) {

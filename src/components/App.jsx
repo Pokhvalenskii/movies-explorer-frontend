@@ -25,7 +25,7 @@ function App() {
   const [savedMovies, setSavedMovies] = useState();
   const [newMovie, setNewMovie] = useState();
   const [foundMovies, setFoundMovies] = useState();
-  const [responseDelete, setResponseDelete] = useState();
+  const [foundSavedMovie, setFoundSavedMovie] = useState();
   // const [userMovies, setUserMovies] = useState();
 
   // console.log(savedMovies, 'savedMOVIES INIT')
@@ -42,7 +42,7 @@ function App() {
               userMovies.push(movie);
             }
           })
-          console.log('userMovie', userMovies)
+          // console.log('userMovie', userMovies)
           // console.log('allMovies', value[1])
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(userMovies))
@@ -141,7 +141,7 @@ function App() {
   }
 
   function saveMovie (movie) {
-    console.log('saveMovie', movie)
+    // console.log('saveMovie', movie)
     const country = movie.country ? movie.country : 'NONE';
     mainApi._addMovie({
       country: country,
@@ -158,7 +158,7 @@ function App() {
       jwt: JWTtoken,
     })
       .then(res => {
-        console.log('добавили фильм', res)
+        // console.log('добавили фильм', res)
         getSavedMovies().then(res => {
           let userMovies = []
           res.forEach(movie => {
@@ -177,7 +177,7 @@ function App() {
       jwt: JWTtoken,
     })
       .then((res) => {
-        console.log('deleteMovie: ', res)
+        // console.log('deleteMovie: ', res)
         getSavedMovies().then(res => {
           let userMovies = []
           res.forEach(movie => {
@@ -190,14 +190,31 @@ function App() {
       })
   }
 
-  function searchMovies (name) {
-    let foundMovies = [];
-    newMovie.forEach(movie => {
-      if(movie.nameRU.includes(name)){
-        foundMovies.push(movie)
-      }
-    })
-    setFoundMovies(foundMovies);
+  function searchMovies (name, place) {
+
+    if(place === 'savedMovies') {
+      console.log('поиск по сохронкам')
+      let foundMovies = [];
+      console.log('поиск по всем')
+      savedMovies.forEach(movie => {
+        if(movie.nameRU.includes(name)){
+          foundMovies.push(movie)
+        }
+      })
+      setFoundSavedMovie(foundMovies);
+    }
+
+    if(place === 'movies') {
+      let foundMovies = [];
+      console.log('поиск по всем')
+      newMovie.forEach(movie => {
+        if(movie.nameRU.includes(name)){
+          foundMovies.push(movie)
+        }
+      })
+      setFoundMovies(foundMovies);
+    }
+
     // console.log('foundMovies name: ', name, ' ARR: ' , foundMovies)
   }
 
@@ -234,6 +251,8 @@ function App() {
             deleteMovie={deleteMovie}
             savedMovies={savedMovies}
 
+            place={'movies'}
+
             searchMovies={searchMovies}
           />
         </ProtectedRoute>
@@ -244,6 +263,9 @@ function App() {
             saveMovie={saveMovie}
             deleteMovie={deleteMovie}
             savedMovies={savedMovies}
+
+            foundMovies={foundSavedMovie}
+            place={'savedMovies'}
 
             searchMovies={searchMovies}
           />

@@ -3,27 +3,18 @@ import Footer from './Footer';
 import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 
+
 function Movies (props) {
-
-  console.log('foundMovies', props.foundMovies, ' savedMovies ', props.savedMovies)
   let renderMovies = [];
-  // console.log('renderMovies: ', renderMovies)
-
-
 
   if(props.foundMovies && props.savedMovies) {
     props.foundMovies.forEach(movie => {
       props.savedMovies.forEach(savedMovie => {
         if(movie.nameRU === savedMovie.nameRU) {
-          console.log('Этот фильм добавлен')
+          // console.log('Этот фильм добавлен')
           movie.saved = true;
         }
-        // if(movie.nameRU !== savedMovie.nameRU) {
-        //   movie.saved = false;
-        // }
       })
-
-      console.log('CHECK MOVIE',movie)
       renderMovies.push(movie);
     })
   }
@@ -35,6 +26,7 @@ function Movies (props) {
         burgerActive={props.burgerActive}
       />
       <SearchForm
+        place={props.place}
         searchMovies={props.searchMovies}
       />
       <div className='movies__place'>

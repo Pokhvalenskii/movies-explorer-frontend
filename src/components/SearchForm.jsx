@@ -10,7 +10,13 @@ function SearchForm (props) {
 
   function searchSubmit (e) {
     e.preventDefault();
-    props.searchMovies(nameMovie)
+    if (props.place === 'movies') {
+      props.searchMovies(nameMovie, props.place)
+    }
+    if (props.place === 'savedMovies') {
+      props.searchMovies(nameMovie, props.place)
+    }
+
   }
 
   return(

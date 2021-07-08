@@ -22,8 +22,9 @@ function App() {
   // const [userName, setUserName] = useState('');
   // const [userEmail, setUserEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(undefined);
-  const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState();
+  const [newMovie, setNewMovie] = useState();
+  const [foundMovies, setFoundMovies] = useState();
   // const [userMovies, setUserMovies] = useState();
 
   // console.log(savedMovies, 'savedMOVIES INIT')
@@ -32,7 +33,7 @@ function App() {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()]) //
         .then(value => {
           console.log('Первый useEffect')
-          setCurrentUser(value[0])          
+          setCurrentUser(value[0])
           console.log('promise2', value[2][1].owner)
           let userMovies = []
           value[2].forEach(movie => {
@@ -41,9 +42,11 @@ function App() {
             }
           })
           console.log('userMovie', userMovies)
+          // console.log('allMovies', value[1])
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(userMovies))
           setSavedMovies(userMovies);
+          setNewMovie(value[1])
           setLoggedIn(true);
         })
           .catch(error => console.log(`${error}`));
@@ -87,17 +90,12 @@ function App() {
     return mainApi._signin(data)
       .then((res) => {
         setLoggedIn(true);
-        // setUserEmail(data.email);
         console.log('login: jwt - ', res.token)
         mainApi._getMe({
           jwt: res.token
         })
           .then(user => {
-            // console.log('USER', user)
             setCurrentUser(user);
-            // console.log('CONTEXT:', currentUser)
-            // setUserEmail(user.email);
-            // setUserName(user.name);
           })
         localStorage.setItem('jwt', res.token);
         setJwt(res.token);
@@ -126,8 +124,6 @@ function App() {
   function logout () {
     localStorage.removeItem('jwt');
     localStorage.removeItem('savedMovies')
-    // setUserName('');
-    // setUserEmail('');
     setLoggedIn(false);
     history.push('/')
   }
@@ -141,11 +137,6 @@ function App() {
       .then(res => {
         setCurrentUser(res);
       })
-  }
-
-  function foundMovies (movies) {
-    setMovies(movies);
-    // console.log('foundMovies', movies)
   }
 
   function saveMovie (movie) {
@@ -167,15 +158,15 @@ function App() {
     })
       .then(res => {
         console.log('добавили фильм', res)
-        getSavedMovies().then(res => {          
-          let userMovies = []          
+        getSavedMovies().then(res => {
+          let userMovies = []
           res.forEach(movie => {
             if(movie.owner === currentUser._id) {
               userMovies.push(movie);
             }
           })
           setSavedMovies(userMovies);
-        })        
+        })
       })
   }
 
@@ -186,16 +177,27 @@ function App() {
     })
       .then((res) => {
         console.log('deleteMovie: ', res)
-        getSavedMovies().then(res => {          
-          let userMovies = []          
+        getSavedMovies().then(res => {
+          let userMovies = []
           res.forEach(movie => {
             if(movie.owner === currentUser._id) {
               userMovies.push(movie);
             }
           })
           setSavedMovies(userMovies);
-        })    
+        })
       })
+  }
+
+  function searchMovies (name) {
+    let foundMovies = [];
+    newMovie.forEach(movie => {
+      if(movie.nameRU.includes(name)){
+        foundMovies.push(movie)
+      }
+    })
+    setFoundMovies(foundMovies);
+    // console.log('foundMovies name: ', name, ' ARR: ' , foundMovies)
   }
 
   return (
@@ -219,7 +221,6 @@ function App() {
             logout={logout}
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            // userName={userName}
             editProfile={editProfile}
           />
         </ProtectedRoute>
@@ -227,9 +228,10 @@ function App() {
           <Movies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            movies={movies}
+            // movies={movies}
             foundMovies={foundMovies}
             saveMovie={saveMovie}
+            searchMovies={searchMovies}
           />
         </ProtectedRoute>
         <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>

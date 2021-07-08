@@ -2,7 +2,6 @@ import { useState } from "react";
 import Checkbox from "./Checkbox";
 
 function SearchForm (props) {
-  const movies = JSON.parse(localStorage.getItem('movies'))
   const [nameMovie, setNameMovie] = useState('')
 
   function searchName (e) {
@@ -11,13 +10,7 @@ function SearchForm (props) {
 
   function searchSubmit (e) {
     e.preventDefault();
-    let foundMovies = movies.map(movie => {
-       if(movie.nameRU.includes(nameMovie)) {
-         return movie
-       }
-    })
-    // console.log('MOVIES LOCAL', foundMovies)
-    props.foundMovies(foundMovies);
+    props.searchMovies(nameMovie)
   }
 
   return(

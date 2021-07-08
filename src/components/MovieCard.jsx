@@ -1,7 +1,6 @@
 function MoviesCard (props) {
-
-  const isLiked = props.likedStatus;
-  const like = isLiked ? 'card__like_status_enable' : '';
+  
+  const saved = props.movie.saved ? 'card__like_status_enable' : '';
   const movie = props.movie;
   const movieImage = props.movie.image.url ? 'https://api.nomoreparties.co' + props.movie.image.url : props.movie.image;
 
@@ -27,7 +26,7 @@ function MoviesCard (props) {
     <article className='card'>
       <div className='card__wrapper'>
         <h2 className='card__title'>{props.movie.nameRU}</h2>
-        <div className={`card__like ${like}`} onClick={handleSaveMovie}></div>
+        <div className={`card__like ${saved}`} onClick={handleSaveMovie}></div>
       </div>
       <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
       <a className='card__wrapper-img' href={movie.trailer || movie.trailerLink} target='_blank' rel='noreferrer'>

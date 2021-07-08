@@ -4,6 +4,25 @@ import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 
 function Movies (props) {
+
+  console.log('foundMovies', props.foundMovies, ' savedMovies ', props.savedMovies)
+
+  let renderMovies = []
+
+  if(props.foundMovies && props.savedMovies) {
+    props.foundMovies.forEach(movie => {
+      props.savedMovies.forEach(savedMovie => {
+        if(movie.nameRU === savedMovie.nameRU) {
+          console.log('Этот фильм добавлен')
+          movie.saved = true;
+        }
+      })
+      renderMovies.push(movie);
+    })
+  }
+
+  console.log('RenderMovie ',renderMovies)
+
   return(
     <section className='movies'>
       <HeaderProfile
@@ -15,7 +34,7 @@ function Movies (props) {
       />
       <div className='movies__place'>
         {
-          props.foundMovies && props.foundMovies.map(item => (
+          renderMovies.map(item => (
           <MoviesCard
             key={item.id}
             movie={item}

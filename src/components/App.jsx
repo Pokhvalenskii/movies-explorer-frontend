@@ -231,6 +231,7 @@ function App() {
             // movies={movies}
             foundMovies={foundMovies}
             saveMovie={saveMovie}
+            savedMovies={savedMovies}
             searchMovies={searchMovies}
           />
         </ProtectedRoute>

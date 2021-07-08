@@ -11,11 +11,12 @@ function SavedMovies (props) {
       <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
       <SearchForm />
       <div className='movies__place'>
-        {           
+        {
           savedMovies.map(item => (
             <MoviesCard
               key={item._id}
               saveMovie={props.saveMovie}
+              deleteMovie={props.deleteMovie}
               movie={item}
             />
           ))

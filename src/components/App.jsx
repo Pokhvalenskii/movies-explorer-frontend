@@ -25,6 +25,7 @@ function App() {
   const [savedMovies, setSavedMovies] = useState();
   const [newMovie, setNewMovie] = useState();
   const [foundMovies, setFoundMovies] = useState();
+  const [responseDelete, setResponseDelete] = useState();
   // const [userMovies, setUserMovies] = useState();
 
   // console.log(savedMovies, 'savedMOVIES INIT')
@@ -34,7 +35,7 @@ function App() {
         .then(value => {
           console.log('Первый useEffect')
           setCurrentUser(value[0])
-          console.log('promise2', value[2][1].owner)
+          // console.log('promise2', value[2][1].owner)
           let userMovies = []
           value[2].forEach(movie => {
             if(movie.owner === value[0]._id) {
@@ -170,9 +171,9 @@ function App() {
       })
   }
 
-  function deleteMovie (movie) {
+  function deleteMovie (id) {
     mainApi._deleteMovie({
-      movieId: movie.movieId,
+      movieId: id,
       jwt: JWTtoken,
     })
       .then((res) => {
@@ -228,10 +229,11 @@ function App() {
           <Movies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            // movies={movies}
             foundMovies={foundMovies}
             saveMovie={saveMovie}
+            deleteMovie={deleteMovie}
             savedMovies={savedMovies}
+
             searchMovies={searchMovies}
           />
         </ProtectedRoute>
@@ -239,8 +241,11 @@ function App() {
           <SavedMovies
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
-            saveMovie={deleteMovie}
+            saveMovie={saveMovie}
+            deleteMovie={deleteMovie}
             savedMovies={savedMovies}
+
+            searchMovies={searchMovies}
           />
         </ProtectedRoute>
         <Route path='*'>

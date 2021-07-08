@@ -6,8 +6,10 @@ import HeaderProfile from './HeaderProfile';
 function Movies (props) {
 
   console.log('foundMovies', props.foundMovies, ' savedMovies ', props.savedMovies)
+  let renderMovies = [];
+  // console.log('renderMovies: ', renderMovies)
 
-  let renderMovies = []
+
 
   if(props.foundMovies && props.savedMovies) {
     props.foundMovies.forEach(movie => {
@@ -16,12 +18,15 @@ function Movies (props) {
           console.log('Этот фильм добавлен')
           movie.saved = true;
         }
+        // if(movie.nameRU !== savedMovie.nameRU) {
+        //   movie.saved = false;
+        // }
       })
+
+      console.log('CHECK MOVIE',movie)
       renderMovies.push(movie);
     })
   }
-
-  console.log('RenderMovie ',renderMovies)
 
   return(
     <section className='movies'>
@@ -39,6 +44,7 @@ function Movies (props) {
             key={item.id}
             movie={item}
             saveMovie={props.saveMovie}
+            deleteMovie={props.deleteMovie}
           />
           ))
         }

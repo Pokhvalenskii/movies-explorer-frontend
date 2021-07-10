@@ -3,20 +3,24 @@ import Footer from './Footer';
 import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 
-
 function Movies (props) {
+
   let renderMovies = [];
+  let hiddenBtn = true;
 
   if(props.foundMovies && props.savedMovies) {
     props.foundMovies.forEach(movie => {
       props.savedMovies.forEach(savedMovie => {
         if(movie.nameRU === savedMovie.nameRU) {
-          // console.log('Этот фильм добавлен')
           movie.saved = true;
         }
       })
       renderMovies.push(movie);
     })
+  }
+
+  if( props.visible > renderMovies.length) {
+    hiddenBtn = false
   }
 
   return(
@@ -31,7 +35,7 @@ function Movies (props) {
       />
       <div className='movies__place'>
         {
-          renderMovies.map(item => (
+          renderMovies.slice(0, props.visible).map(item => (
           <MoviesCard
             key={item.id}
             movie={item}
@@ -41,7 +45,8 @@ function Movies (props) {
           ))
         }
       </div>
-      <button className='movies__btn'>Ещё</button>
+      {}
+      {hiddenBtn && <button className='movies__btn' onClick={props.showMore}>Ещё</button>}
       <Footer />
     </section>
   );

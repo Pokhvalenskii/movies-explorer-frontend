@@ -19,31 +19,29 @@ function App() {
   const [burgerActive, setBurgerActive] = useState(false);
   const [currentUser, setCurrentUser] = useState({})
   const [jwt, setJwt] = useState({})
-  // const [userName, setUserName] = useState('');
-  // const [userEmail, setUserEmail] = useState('');
+  const [visible, setVisible] = useState(3);
   const [loggedIn, setLoggedIn] = useState(undefined);
   const [savedMovies, setSavedMovies] = useState();
   const [newMovie, setNewMovie] = useState();
   const [foundMovies, setFoundMovies] = useState();
   const [foundSavedMovie, setFoundSavedMovie] = useState();
-  // const [userMovies, setUserMovies] = useState();
 
-  // console.log(savedMovies, 'savedMOVIES INIT')
+  function showMore () {
+    setVisible((value) => value + 3);
+  }
+
   useEffect(() => {
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()]) //
         .then(value => {
           console.log('Первый useEffect')
           setCurrentUser(value[0])
-          // console.log('promise2', value[2][1].owner)
           let userMovies = []
           value[2].forEach(movie => {
             if(movie.owner === value[0]._id) {
               userMovies.push(movie);
             }
           })
-          // console.log('userMovie', userMovies)
-          // console.log('allMovies', value[1])
           localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('savedMovies', JSON.stringify(userMovies))
           setSavedMovies(userMovies);
@@ -78,15 +76,10 @@ function App() {
     }
   }
 
-  // REGISTRATION
   function handleSignup (data) {
     return mainApi._signup(data)
-      .then(() => {
-        // ПОПАП РЕГИСТРАЦИИ
-      })
   }
 
-  // LOGIN
   function handleSignin (data) {
     return mainApi._signin(data)
       .then((res) => {
@@ -100,20 +93,14 @@ function App() {
           })
         localStorage.setItem('jwt', res.token);
         setJwt(res.token);
-      }).catch(() => {
-        // ПОПАП ОШИБКИ ВХОДА
       })
   }
 
   const checkLoggedIn = useCallback(() => {
-    // console.log('checkLoggedIn')
     if(JWTtoken !== null) {
       mainApi._getMe({ jwt: JWTtoken })
         .then(res => {
           setLoggedIn(true)
-          // setUserName(res.name);
-          // setUserEmail(res.email);
-          // history.push('/')
         })
     }
   }, [JWTtoken]);
@@ -141,7 +128,6 @@ function App() {
   }
 
   function saveMovie (movie) {
-    // console.log('saveMovie', movie)
     const country = movie.country ? movie.country : 'NONE';
     mainApi._addMovie({
       country: country,
@@ -157,8 +143,7 @@ function App() {
       movieId: String(movie.id) + currentUser._id,
       jwt: JWTtoken,
     })
-      .then(res => {
-        // console.log('добавили фильм', res)
+      .then(() => {
         getSavedMovies().then(res => {
           let userMovies = []
           res.forEach(movie => {
@@ -176,8 +161,7 @@ function App() {
       movieId: id,
       jwt: JWTtoken,
     })
-      .then((res) => {
-        // console.log('deleteMovie: ', res)
+      .then(() => {
         getSavedMovies().then(res => {
           let userMovies = []
           res.forEach(movie => {
@@ -190,15 +174,19 @@ function App() {
       })
   }
 
-  function searchMovies (name, place) {
-
+  function searchMovies (name, place, shortFilm) {
+    console.log('поиск короткого фильма',shortFilm);
     if(place === 'savedMovies') {
-      console.log('поиск по сохронкам')
       let foundMovies = [];
-      console.log('поиск по всем')
       savedMovies.forEach(movie => {
-        if(movie.nameRU.includes(name)){
-          foundMovies.push(movie)
+        if(shortFilm) {
+          if(movie.nameRU.includes(name) && movie.duration <= 40){
+            foundMovies.push(movie)
+          }
+        } else {
+          if(movie.nameRU.includes(name)){
+            foundMovies.push(movie)
+          }
         }
       })
       setFoundSavedMovie(foundMovies);
@@ -206,16 +194,20 @@ function App() {
 
     if(place === 'movies') {
       let foundMovies = [];
-      console.log('поиск по всем')
+
       newMovie.forEach(movie => {
-        if(movie.nameRU.includes(name)){
-          foundMovies.push(movie)
+        if(shortFilm) {
+          if(movie.nameRU.includes(name) && movie.duration <= 40){
+            foundMovies.push(movie)
+          }
+        } else {
+          if(movie.nameRU.includes(name)){
+            foundMovies.push(movie)
+          }
         }
       })
       setFoundMovies(foundMovies);
     }
-
-    // console.log('foundMovies name: ', name, ' ARR: ' , foundMovies)
   }
 
   return (
@@ -250,9 +242,9 @@ function App() {
             saveMovie={saveMovie}
             deleteMovie={deleteMovie}
             savedMovies={savedMovies}
-
+            showMore={showMore}
+            visible={visible}
             place={'movies'}
-
             searchMovies={searchMovies}
           />
         </ProtectedRoute>
@@ -263,10 +255,8 @@ function App() {
             saveMovie={saveMovie}
             deleteMovie={deleteMovie}
             savedMovies={savedMovies}
-
             foundMovies={foundSavedMovie}
             place={'savedMovies'}
-
             searchMovies={searchMovies}
           />
         </ProtectedRoute>

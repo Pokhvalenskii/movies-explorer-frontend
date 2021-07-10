@@ -4,6 +4,8 @@ import Checkbox from "./Checkbox";
 function SearchForm (props) {
   const [nameMovie, setNameMovie] = useState('')
 
+  const [timeSearch, setTimeSearch] = useState(false);
+
   function searchName (e) {
     setNameMovie(e.target.value)
   }
@@ -11,10 +13,10 @@ function SearchForm (props) {
   function searchSubmit (e) {
     e.preventDefault();
     if (props.place === 'movies') {
-      props.searchMovies(nameMovie, props.place)
+      props.searchMovies(nameMovie, props.place, timeSearch)
     }
     if (props.place === 'savedMovies') {
-      props.searchMovies(nameMovie, props.place)
+      props.searchMovies(nameMovie, props.place, timeSearch)
     }
 
   }
@@ -34,7 +36,10 @@ function SearchForm (props) {
       </div>
       <div className='search-form__checkbox'>
         <p className='search-form__checkbox-text'>Короткометражки</p>
-        <Checkbox />
+        <Checkbox
+          setTimeSearch={setTimeSearch}
+          timeSearch={timeSearch}
+        />
       </div>
     </form>
   );

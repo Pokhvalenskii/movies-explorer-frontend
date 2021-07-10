@@ -2,12 +2,8 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { useContext } from 'react';
 
 function MoviesCard (props) {
-
-  // const isLiked = props.likedStatus;
-  // const like = isLiked ? 'card__like_status_enable' : '';
-
+  
   const currentUser = useContext(CurrentUserContext);
-
   const movie = props.movie;
   const saved = movie.saved ? 'card__like_status_enable' : '';
   const place = movie.id ? '' : 'card__like_status_disable';

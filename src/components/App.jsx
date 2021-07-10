@@ -34,7 +34,6 @@ function App() {
     if(JWTtoken !== null) {
       Promise.all([mainApi._getMe({ jwt: JWTtoken }), getMovies(), getSavedMovies()]) //
         .then(value => {
-          console.log('Первый useEffect')
           setCurrentUser(value[0])
           let userMovies = []
           value[2].forEach(movie => {
@@ -47,10 +46,8 @@ function App() {
           setSavedMovies(userMovies);
           setNewMovie(value[1])
           setLoggedIn(true);
-        })
-          .catch(error => console.log(`${error}`));
+        }).catch(error => console.log(`${error}`));
     } else {
-      console.log('Сработал но без токена')
       setLoggedIn(false);
       history.push('/signin');
     }
@@ -84,13 +81,12 @@ function App() {
     return mainApi._signin(data)
       .then((res) => {
         setLoggedIn(true);
-        console.log('login: jwt - ', res.token)
         mainApi._getMe({
           jwt: res.token
         })
           .then(user => {
             setCurrentUser(user);
-          })
+          }).catch(error => console.log(`${error}`));
         localStorage.setItem('jwt', res.token);
         setJwt(res.token);
       })
@@ -99,9 +95,9 @@ function App() {
   const checkLoggedIn = useCallback(() => {
     if(JWTtoken !== null) {
       mainApi._getMe({ jwt: JWTtoken })
-        .then(res => {
+        .then(() => {
           setLoggedIn(true)
-        })
+        }).catch(error => console.log(`${error}`));
     }
   }, [JWTtoken]);
 
@@ -124,7 +120,7 @@ function App() {
     })
       .then(res => {
         setCurrentUser(res);
-      })
+      }).catch(error => console.log(`${error}`));
   }
 
   function saveMovie (movie) {
@@ -152,8 +148,8 @@ function App() {
             }
           })
           setSavedMovies(userMovies);
-        })
-      })
+        }).catch(error => console.log(`${error}`));
+      }).catch(error => console.log(`${error}`));
   }
 
   function deleteMovie (id) {
@@ -171,11 +167,10 @@ function App() {
           })
           setSavedMovies(userMovies);
         })
-      })
+      }).catch(error => console.log(`${error}`));
   }
 
   function searchMovies (name, place, shortFilm) {
-    console.log('поиск короткого фильма',shortFilm);
     if(place === 'savedMovies') {
       let foundMovies = [];
       savedMovies.forEach(movie => {

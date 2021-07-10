@@ -2,7 +2,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { useContext } from 'react';
 
 function MoviesCard (props) {
-  
+
   const currentUser = useContext(CurrentUserContext);
   const movie = props.movie;
   const saved = movie.saved ? 'card__like_status_enable' : '';
@@ -12,11 +12,9 @@ function MoviesCard (props) {
   function handleSaveMovie () {
     if(movie.id) {
       if(movie.saved) {
-        console.log('flag2', movie.saved)
         props.deleteMovie(movie.id + currentUser._id)
         movie.saved = false;
       } else {
-        console.log('flag3', movie.saved)
         props.saveMovie(movie)
         movie.saved = true;
       }

@@ -1,0 +1,9 @@
+.form__btn_status_disabled {
+  background-color: #F8F8F8;
+  color: #000;
+}
+.form__btn_status_disabled:hover {
+  background-color: #F8F8F8;
+  color: #000;
+  opacity: 1;
+}

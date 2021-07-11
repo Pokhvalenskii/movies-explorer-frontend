@@ -46,7 +46,8 @@ function App() {
             }
           })
           // localStorage.setItem('movies', JSON.stringify(value[1]))
-          // localStorage.setItem('savedMovies', JSON.stringify(userMovies))
+          localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies))
+          setLocalSavedMoviesState(JSON.parse(localStorage.getItem('foundSaveMovies')))
           setSavedMovies(userMovies);
           setNewMovie(value[1])
           setLoggedIn(true);
@@ -112,6 +113,8 @@ function App() {
   function logout () {
     localStorage.removeItem('jwt');
     localStorage.removeItem('savedMovies')
+    localStorage.removeItem('foundSaveMovies')
+    localStorage.removeItem('foundMovies')
     setLoggedIn(false);
     history.push('/')
   }
@@ -174,7 +177,6 @@ function App() {
             }
           })
           setSavedMovies(userMovies);
-          console.log('DELETE => saveMovies', userMovies)
           localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies))
           setLocalSavedMoviesState(JSON.parse(localStorage.getItem('foundSaveMovies')))
           setLocalMoviesState(JSON.parse(localStorage.getItem('foundMovies')))
@@ -218,7 +220,6 @@ function App() {
         }
       })
       setFoundMovies(foundMovies);
-      // console.log('search check', foundMovies)
       localStorage.setItem('foundMovies', JSON.stringify(foundMovies))
       setLocalMoviesState(JSON.parse(localStorage.getItem('foundMovies')))
 
@@ -271,6 +272,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/saved-movies' loggedIn={loggedIn}>
           <SavedMovies
+            localMoviesState={localMoviesState}
+            localSavedMoviesState={localSavedMoviesState}
+
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
             saveMovie={saveMovie}

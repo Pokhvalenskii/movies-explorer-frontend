@@ -4,9 +4,9 @@ import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 function SavedMovies (props) {
 
-  const savedMovies = props.savedMovies ? props.savedMovies : JSON.parse(localStorage.getItem('savedMovies'));
+  const savedMovies = props.savedMovies ? props.savedMovies : props.localSavedMoviesState;
   const renderMovie = props.foundMovies ? props.foundMovies : savedMovies;
-  
+
   return(
     <section className='movies'>
       <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
@@ -17,7 +17,7 @@ function SavedMovies (props) {
       />
       <div className='movies__place'>
         {
-          renderMovie.map(item => (
+          renderMovie.map(item => (   //rendermovie
             <MoviesCard
               key={item._id}
               saveMovie={props.saveMovie}

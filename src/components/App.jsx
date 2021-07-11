@@ -26,6 +26,10 @@ function App() {
   const [foundMovies, setFoundMovies] = useState();
   const [foundSavedMovie, setFoundSavedMovie] = useState();
 
+  const [localMoviesState, setLocalMoviesState] = useState(JSON.parse(localStorage.getItem('foundMovies')));
+  const [localSavedMoviesState, setLocalSavedMoviesState] = useState(JSON.parse(localStorage.getItem('foundSaveMovies')));
+
+
   function showMore () {
     setVisible((value) => value + 3);
   }
@@ -41,8 +45,8 @@ function App() {
               userMovies.push(movie);
             }
           })
-          localStorage.setItem('movies', JSON.stringify(value[1]))
-          localStorage.setItem('savedMovies', JSON.stringify(userMovies))
+          // localStorage.setItem('movies', JSON.stringify(value[1]))
+          // localStorage.setItem('savedMovies', JSON.stringify(userMovies))
           setSavedMovies(userMovies);
           setNewMovie(value[1])
           setLoggedIn(true);
@@ -148,6 +152,10 @@ function App() {
             }
           })
           setSavedMovies(userMovies);
+          localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies))
+          setLocalSavedMoviesState(JSON.parse(localStorage.getItem('foundSaveMovies')))
+          // console.log('saveMovies', userMovies)
+          // localStorage.setItem('movies', JSON.stringify(userMovies));
         }).catch(error => console.log(`${error}`));
       }).catch(error => console.log(`${error}`));
   }
@@ -166,6 +174,12 @@ function App() {
             }
           })
           setSavedMovies(userMovies);
+          console.log('DELETE => saveMovies', userMovies)
+          localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies))
+          setLocalSavedMoviesState(JSON.parse(localStorage.getItem('foundSaveMovies')))
+          setLocalMoviesState(JSON.parse(localStorage.getItem('foundMovies')))
+          // setLocalSavedMoviesState(localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies)));
+          // localStorage.setItem('movies', JSON.stringify(userMovies));
         })
       }).catch(error => console.log(`${error}`));
   }
@@ -184,6 +198,8 @@ function App() {
           }
         }
       })
+      localStorage.setItem('foundMovies', JSON.stringify(foundMovies))
+      setLocalMoviesState(JSON.parse(localStorage.getItem('foundMovies')))
       setFoundSavedMovie(foundMovies);
     }
 
@@ -202,6 +218,10 @@ function App() {
         }
       })
       setFoundMovies(foundMovies);
+      // console.log('search check', foundMovies)
+      localStorage.setItem('foundMovies', JSON.stringify(foundMovies))
+      setLocalMoviesState(JSON.parse(localStorage.getItem('foundMovies')))
+
     }
   }
 
@@ -234,6 +254,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/movies' loggedIn={loggedIn}>
           <Movies
+            localMoviesState={localMoviesState}
+            localSavedMoviesState={localSavedMoviesState}
+
             isActive={handleActiveBurger}
             burgerActive={burgerActive}
             foundMovies={foundMovies}

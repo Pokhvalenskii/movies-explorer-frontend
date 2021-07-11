@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 function Menu (props) {
   const isActiveWrapper = props.burgerActive ? 'menu__wrapper_active' : '';
@@ -9,13 +10,13 @@ function Menu (props) {
         <div className='menu__overlay'></div>
         <li className='menu__list'>
           <ul className='menu__list-item'>
-            <a className='menu__link' href='/'>Главная</a>
+            <Link className='menu__link' to='/'>Главная</Link>
           </ul>
           <ul className='menu__list-item'>
-            <a className='menu__link' href='/movies'>Фильмы</a>
+            <Link className='menu__link' to='/movies'>Фильмы</Link>
           </ul>
           <ul className='menu__list-item'>
-            <a className='menu__link' href='/saved-movies'>Сохранённые Фильмы</a>
+            <Link className='menu__link' to='/saved-movies'>Сохранённые Фильмы</Link>
           </ul>
         </li>
       </div>

@@ -8,7 +8,9 @@ import HeaderProfile from './HeaderProfile';
 function Main (props) {
   return (
     <>
-      {props.loggedIn ? <HeaderProfile loggedIn={props.loggedIn}/> : <Header/>}
+      {props.loggedIn ? <HeaderProfile loggedIn={props.loggedIn} isActive={props.isActive}
+            burgerActive={props.burgerActive}/> : <Header isActive={props.isActive}
+            burgerActive={props.burgerActive}/>}
       <Promo />
       <Project />
       <Technologies />

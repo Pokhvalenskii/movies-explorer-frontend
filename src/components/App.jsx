@@ -209,7 +209,10 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <Route exact path='/'>
-          <Main loggedIn={loggedIn}/>
+          <Main loggedIn={loggedIn}
+            isActive={handleActiveBurger}
+            burgerActive={burgerActive}
+          />
         </Route>
         <Route path='/signin'>
           <Login

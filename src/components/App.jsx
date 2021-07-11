@@ -49,7 +49,7 @@ function App() {
         }).catch(error => console.log(`${error}`));
     } else {
       setLoggedIn(false);
-      history.push('/signin');
+      // history.push('/signin');
     }
   }, [jwt]);
 

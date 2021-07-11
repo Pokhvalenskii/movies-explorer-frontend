@@ -41,7 +41,7 @@ function Profile (props) {
           <input
             className='profile-form__input'
             type='text'
-            dir='rtl'
+            // dir='rtl'
             maxLength='30'
             minLength='1'
             placeholder={currentUser.name}
@@ -54,7 +54,7 @@ function Profile (props) {
           <input
             className='profile-form__input'
             type='email'
-            dir='rtl'
+            // dir='rtl'
             maxLength='30'
             minLength='1'
             placeholder={currentUser.email}

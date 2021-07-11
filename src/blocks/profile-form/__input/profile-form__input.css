@@ -4,6 +4,7 @@
   outline-offset: 0;
   color: #fff;
   background-color: #202020;
+  text-align: right;
 }
 
 .profile-form__input:focus {

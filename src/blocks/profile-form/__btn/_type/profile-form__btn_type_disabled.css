@@ -1,0 +1,8 @@
+.profile-form__btn_type_disabled {
+  color: #A0A0A0;
+  opacity: 1;
+}
+
+.profile-form__btn_type_disabled:hover {
+  opacity: 1;
+}

@@ -115,6 +115,7 @@
 @import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
 @import url(./blocks/profile-form/__input-wrapper/profile-form__input-wrapper.css);
 @import url(./blocks/profile-form/__input-label/profile-form__input-label.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_disabled.css);
 
 /* SEARCH */
 @import url(./blocks/search-form/search-form.css);

@@ -17,7 +17,7 @@ function SavedMovies (props) {
       />
       <div className='movies__place'>
         {
-          renderMovie.map(item => (   //rendermovie
+          props.checkLoad && renderMovie.map(item => (   //rendermovie
             <MoviesCard
               key={item._id}
               saveMovie={props.saveMovie}

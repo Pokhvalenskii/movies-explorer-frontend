@@ -26,9 +26,12 @@ function App() {
   const [foundMovies, setFoundMovies] = useState();
   const [foundSavedMovie, setFoundSavedMovie] = useState();
 
+  const [load, setLoad] = useState(false)
+
   const [localMoviesState, setLocalMoviesState] = useState(JSON.parse(localStorage.getItem('foundMovies')));
   const [localSavedMoviesState, setLocalSavedMoviesState] = useState(JSON.parse(localStorage.getItem('foundSaveMovies')));
 
+  const checkLoad = load ? load : false
 
   function showMore () {
     setVisible((value) => value + 3);
@@ -45,12 +48,12 @@ function App() {
               userMovies.push(movie);
             }
           })
-          // localStorage.setItem('movies', JSON.stringify(value[1]))
           localStorage.setItem('foundSaveMovies', JSON.stringify(userMovies))
           setLocalSavedMoviesState(JSON.parse(localStorage.getItem('foundSaveMovies')))
           setSavedMovies(userMovies);
           setNewMovie(value[1])
           setLoggedIn(true);
+          setLoad(true);
         }).catch(error => console.log(`${error}`));
     } else {
       setLoggedIn(false);
@@ -274,6 +277,7 @@ function App() {
           <SavedMovies
             localMoviesState={localMoviesState}
             localSavedMoviesState={localSavedMoviesState}
+            checkLoad={checkLoad}
 
             isActive={handleActiveBurger}
             burgerActive={burgerActive}

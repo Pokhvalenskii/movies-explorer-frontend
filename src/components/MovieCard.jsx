@@ -1,22 +1,53 @@
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import { useContext } from 'react';
+
 function MoviesCard (props) {
 
-  const isLiked = props.likedStatus;
-  const like = isLiked ? 'card__like_status_enable' : '';
+  const currentUser = useContext(CurrentUserContext);
+  const movie = props.movie;
+  const saved = movie.saved ? 'card__like_status_enable' : '';
+  const place = movie.id ? '' : 'card__like_status_disable';
+  const movieImage = props.movie.image.url ? 'https://api.nomoreparties.co' + props.movie.image.url : props.movie.image;
 
-  function handleLike() {
-    props.liked();
+  function handleSaveMovie () {
+    if(movie.id) {
+      if(movie.saved) {
+        props.deleteMovie(movie.id + currentUser._id)
+        movie.saved = false;
+      } else {
+        props.saveMovie(movie)
+        movie.saved = true;
+      }
+    }
+    if(movie._id) {
+      props.deleteMovie(movie.movieId)
+    }
+  }
+
+  function timeConversion (minutes) {
+    let hours = Math.trunc(minutes/60);
+    let mins = minutes % 60;
+      if(hours === 0) {
+        return mins + 'м';
+      }
+      if(mins === 0) {
+        return hours + 'ч';
+      }
+      else {
+        return  hours + 'ч ' + mins + 'м';
+      }
   }
 
   return(
     <article className='card'>
       <div className='card__wrapper'>
-        <h2 className='card__title'>Lock, Stock and Two Smoking Barrels</h2>
-        <div className={`card__like ${like}`} onClick={handleLike}></div>
+        <h2 className='card__title'>{props.movie.nameRU}</h2>
+        <div className={`card__like ${saved} ${place}`} onClick={handleSaveMovie}></div>
       </div>
-      <p className='card__film-length'>2ч 5м</p>
-      <div className='card__wrapper-img'>
-        <img className='card__img' src="https://www.soyuz.ru/public/uploads/files/2/7446725/20200918112442b2267e02b5.png" alt="URL КАРТОЧКА" />
-      </div>
+      <p className='card__film-length'>{timeConversion(props.movie.duration)}</p>
+      <a className='card__wrapper-img' href={movie.trailer || movie.trailerLink} target='_blank' rel='noreferrer'>
+        <img className='card__img' src={`${movieImage}`} alt="URL КАРТОЧКА" />
+      </a>
     </article>
   );
 }

@@ -4,7 +4,7 @@
   width: 36px;
   height: 20px;
   border-radius: 10px;
-  background-color: #2be080;
+  background-color: #343434;
   position: absolute;
   cursor: pointer;
   transition: linear .1s;
@@ -16,7 +16,7 @@
   width: 16px;
   height: 16px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #A0A0A0;
   position: absolute;
   transition: linear .1s;
 }

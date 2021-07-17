@@ -3,27 +3,29 @@ import Footer from './Footer';
 import SearchForm from './SearchForm'
 import HeaderProfile from './HeaderProfile';
 function SavedMovies (props) {
+
+  const savedMovies = props.savedMovies ? props.savedMovies : props.localSavedMoviesState;
+  const renderMovie = props.foundMovies ? props.foundMovies : savedMovies;
+
   return(
     <section className='movies'>
       <HeaderProfile isActive={props.isActive} burgerActive={props.burgerActive}/>
-      <SearchForm />
+      <SearchForm
+        place={props.place}
+        savedMovies={savedMovies}
+        searchMovies={props.searchMovies}
+      />
       <div className='movies__place'>
-        <MoviesCard
-          liked={props.liked}
-          likedStatus={props.likedStatus}
-          />
-          <MoviesCard
-          liked={props.liked}
-          likedStatus={props.likedStatus}
-          />
-          <MoviesCard
-          liked={props.liked}
-          likedStatus={props.likedStatus}
-          />
-          <MoviesCard
-          liked={props.liked}
-          likedStatus={props.likedStatus}
-          />
+        {
+          props.checkLoad && renderMovie.map(item => (   //rendermovie
+            <MoviesCard
+              key={item._id}
+              saveMovie={props.saveMovie}
+              deleteMovie={props.deleteMovie}
+              movie={item}
+            />
+          ))
+        }
       </div>
       <Footer />
     </section>

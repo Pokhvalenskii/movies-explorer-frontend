@@ -13,3 +13,6 @@
   border-bottom: 1px solid #424242;
   margin-bottom: 17px;
 }
+.profile-form__input-wrapper:last-of-type {
+  margin-bottom: 17px;
+}

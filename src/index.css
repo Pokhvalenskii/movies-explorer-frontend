@@ -66,6 +66,8 @@
 @import url(./blocks/form/__btn/form__btn.css);
 @import url(./blocks/form/__btn/_type/form__btn_type_signin.css);
 @import url(./blocks/form/__btn/_type/form__btn_type_signup.css);
+@import url(./blocks/form/__btn/_status/form__btn_status_disabled.css);
+@import url(./blocks/form/__error/form__error.css);
 
 /* REGISTER */
 @import url(./blocks/register/register.css);
@@ -102,6 +104,7 @@
 @import url(./blocks/header-profile/__text/header-profile__text.css);
 @import url(./blocks/header-profile/__text/_type/header-profile__text_type_fat.css);
 @import url(./blocks/header-profile/__nav/header-profile__nav.css);
+@import url(./blocks/header-profile/_loggedIn/header-profile_loggedIn.css);
 
 /* PROFILE-FORM */
 @import url(./blocks/profile-form/profile-form.css);
@@ -112,6 +115,7 @@
 @import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_exit.css);
 @import url(./blocks/profile-form/__input-wrapper/profile-form__input-wrapper.css);
 @import url(./blocks/profile-form/__input-label/profile-form__input-label.css);
+@import url(./blocks/profile-form/__btn/_type/profile-form__btn_type_disabled.css);
 
 /* SEARCH */
 @import url(./blocks/search-form/search-form.css);
@@ -132,10 +136,10 @@
 @import url(./blocks/card/__like/card__like.css);
 @import url(./blocks/card/__like/_status/card__like_status_enable.css);
 @import url(./blocks/card/__like/_status/card__like_status_disable.css);
-
 @import url(./blocks/card/__film-length/card__film-length.css);
 @import url(./blocks/card/__wrapper/card__wrapper.css);
 @import url(./blocks/card/__img/card__img.css);
+@import url(./blocks/card/__wrapper-img/card__wrapper-img.css);
 
 @import url(./blocks/movies/movies.css);
 @import url(./blocks/movies/__place/movie__place.css);
